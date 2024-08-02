@@ -34,16 +34,21 @@
 <symbolTable>
 <entry id="8388639" module="true" symbol="Graphics"/>
 <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+<entry field="true" id="13" symbol="AveHeartRate"/>
 <entry field="true" id="10" symbol="example"/>
+<entry field="true" id="16" symbol="BottomFieldLabel"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
 <entry field="true" id="11" symbol="AppName"/>
 <entry id="5" module="true" symbol="globals/Rez/Strings"/>
+<entry field="true" id="18" symbol="Distance"/>
 <entry id="8388648" module="true" symbol="WatchUi"/>
+<entry field="true" id="22" symbol="SecondFieldLabel"/>
 <entry id="2" module="true" symbol="globals/Rez"/>
 <entry id="8389124" method="true" symbol="onUpdate"/>
 <entry id="8389375" method="true" object="true" symbol="WatchFace"/>
 <entry field="true" id="8389065" symbol="locY"/>
 <entry field="true" id="8389064" symbol="locX"/>
+<entry field="true" id="20" symbol="InvertMiddleBackgroundLabel"/>
 <entry id="8388771" module="true" object="true" symbol="Drawables"/>
 <entry id="8389348" symbol="font"/>
 <entry id="8389275" method="true" symbol="getApp"/>
@@ -54,6 +59,7 @@
 <entry id="8389349" symbol="justification"/>
 <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
 <entry id="8389377" method="true" symbol="onExitSleep"/>
+<entry field="true" id="8388645" module="true" symbol="Time"/>
 <entry id="8388769" module="true" object="true" symbol="Rez"/>
 <entry id="8388640" module="true" symbol="Lang"/>
 <entry field="true" id="9" symbol="LauncherIcon"/>
@@ -61,14 +67,21 @@
 <entry id="8389123" method="true" symbol="onShow"/>
 <entry id="8389350" module="true" symbol="globals"/>
 <entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry field="true" id="14" symbol="Battery"/>
 <entry id="8388702" method="true" symbol="initialize"/>
 <entry id="8389279" method="true" symbol="onStart"/>
+<entry field="true" id="15" symbol="BlackBackgroundLabel"/>
+<entry field="true" id="21" symbol="None"/>
+<entry field="true" id="17" symbol="Cadence"/>
+<entry field="true" id="12" symbol="AveCadence"/>
 <entry id="8389280" method="true" symbol="getInitialView"/>
 <entry id="8389281" method="true" symbol="onStop"/>
 <entry id="8389347" symbol="color"/>
+<entry field="true" id="8388646" module="true" object="true" symbol="Timer"/>
 <entry id="8" module="true" symbol="Layouts"/>
 <entry id="7" object="true" symbol="HeartsDesireView"/>
 <entry id="8389125" method="true" symbol="onHide"/>
+<entry field="true" id="19" symbol="FirstFieldLabel"/>
 <entry id="6" object="true" symbol="HeartsDesireApp"/>
 <entry id="8388635" module="true" symbol="Application"/>
 </symbolTable>
@@ -88,7 +101,20 @@
 <annotations>
 <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
 <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="example"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AveHeartRate"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Battery"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Time"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="None"/>
 <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Cadence"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="InvertMiddleBackgroundLabel"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="FirstFieldLabel"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AveCadence"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Timer"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BlackBackgroundLabel"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="SecondFieldLabel"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="BottomFieldLabel"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Distance"/>
 </annotations>
 <dataEntryOffsetMappings>
 <dataEntry label="globals" offset="58" parentId="" symbolId="globals" type="module"/>

@@ -21,7 +21,20 @@ module Rez {
     } // Layouts
 
     module Strings {
+        (:initialized) var BottomFieldLabel as ResourceId;
+        (:initialized) var Cadence as ResourceId;
+        (:initialized) var Time as ResourceId;
+        (:initialized) var BlackBackgroundLabel as ResourceId;
+        (:initialized) var InvertMiddleBackgroundLabel as ResourceId;
         (:initialized) var AppName as ResourceId;
+        (:initialized) var SecondFieldLabel as ResourceId;
+        (:initialized) var Timer as ResourceId;
+        (:initialized) var AveHeartRate as ResourceId;
+        (:initialized) var FirstFieldLabel as ResourceId;
+        (:initialized) var Battery as ResourceId;
+        (:initialized) var None as ResourceId;
+        (:initialized) var AveCadence as ResourceId;
+        (:initialized) var Distance as ResourceId;
     } // Strings
 
     module Styles {
