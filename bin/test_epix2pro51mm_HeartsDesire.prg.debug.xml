@@ -15,28 +15,23 @@
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="26" parent="globals/HeartsDesireView" pc="268435579" symbol="onUpdate"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="27" parent="globals/HeartsDesireView" pc="268435591" symbol="onUpdate"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="28" parent="globals/HeartsDesireView" pc="268435645" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="30" parent="globals/HeartsDesireView" pc="268435699" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="31" parent="globals/HeartsDesireView" pc="268435723" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="33" parent="globals/HeartsDesireView" pc="268435747" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="34" parent="globals/HeartsDesireView" pc="268435759" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="37" parent="globals/HeartsDesireView" pc="268435771" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="12" lineNum="12" parent="globals/HeartsDesireApp" pc="268435792" symbol="onStart"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="13" lineNum="20" parent="globals/HeartsDesireApp" pc="268435795" symbol="getInitialView"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="13" lineNum="21" parent="globals/HeartsDesireApp" pc="268435797" symbol="getInitialView"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="14" lineNum="7" parent="globals/HeartsDesireApp" pc="268435827" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="14" lineNum="8" parent="globals/HeartsDesireApp" pc="268435829" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="15" lineNum="16" parent="globals/HeartsDesireApp" pc="268435842" symbol="onStop"/>
-<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="14" parent="globals/Rez/Layouts" pc="268435845" symbol="WatchFace"/>
-<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="15" parent="globals/Rez/Layouts" pc="268435856" symbol="WatchFace"/>
-<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="17" parent="globals/Rez/Layouts" pc="268435944" symbol="WatchFace"/>
-<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="19" parent="globals/Rez/Layouts" pc="268436033" symbol="WatchFace"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="29" parent="globals/HeartsDesireView" pc="268435669" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="32" parent="globals/HeartsDesireView" pc="268435681" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="12" lineNum="12" parent="globals/HeartsDesireApp" pc="268435702" symbol="onStart"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="13" lineNum="20" parent="globals/HeartsDesireApp" pc="268435705" symbol="getInitialView"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="13" lineNum="21" parent="globals/HeartsDesireApp" pc="268435707" symbol="getInitialView"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="14" lineNum="7" parent="globals/HeartsDesireApp" pc="268435737" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="14" lineNum="8" parent="globals/HeartsDesireApp" pc="268435739" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="15" lineNum="16" parent="globals/HeartsDesireApp" pc="268435752" symbol="onStop"/>
+<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="13" parent="globals/Rez/Layouts" pc="268435755" symbol="WatchFace"/>
+<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="14" parent="globals/Rez/Layouts" pc="268435766" symbol="WatchFace"/>
+<entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="16" lineNum="16" parent="globals/Rez/Layouts" pc="268435870" symbol="WatchFace"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8388639" module="true" symbol="Graphics"/>
 <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
-<entry field="true" id="10" symbol="example"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-<entry field="true" id="11" symbol="AppName"/>
+<entry field="true" id="10" symbol="AppName"/>
 <entry id="5" module="true" symbol="globals/Rez/Strings"/>
 <entry id="8388648" module="true" symbol="WatchUi"/>
 <entry id="2" module="true" symbol="globals/Rez"/>
@@ -75,20 +70,16 @@
 </symbolTable>
 <localVars>
 <entry arg="true" endPc="268435560" name="dc" stackId="1" startPc="268435525"/>
-<entry arg="true" endPc="268435791" name="dc" stackId="1" startPc="268435576"/>
-<entry endPc="268435790" name="clockTime" stackId="2" startPc="268435579"/>
-<entry endPc="268435790" name="timeStringHH" stackId="3" startPc="268435579"/>
-<entry endPc="268435790" name="timeStringMM" stackId="4" startPc="268435579"/>
-<entry endPc="268435790" name="viewHH" stackId="5" startPc="268435579"/>
-<entry endPc="268435790" name="viewMM" stackId="6" startPc="268435579"/>
-<entry arg="true" endPc="268436047" name="dc" stackId="1" startPc="268435845"/>
-<entry endPc="268436047" name="rez_cmp_local_text_TimeLabelHH" stackId="2" startPc="268435856"/>
-<entry endPc="268436047" name="rez_cmp_local_text_TimeLabelMM" stackId="3" startPc="268435856"/>
+<entry arg="true" endPc="268435701" name="dc" stackId="1" startPc="268435576"/>
+<entry endPc="268435700" name="clockTime" stackId="2" startPc="268435579"/>
+<entry endPc="268435700" name="timeString" stackId="3" startPc="268435579"/>
+<entry endPc="268435700" name="view" stackId="4" startPc="268435579"/>
+<entry arg="true" endPc="268435879" name="dc" stackId="1" startPc="268435755"/>
+<entry endPc="268435879" name="rez_cmp_local_text_TimeLabel" stackId="2" startPc="268435766"/>
 </localVars>
 <deviceInfo deviceVersion="4866e5192c0c99025597cd8e6e841f3d774b64f7" partNumber="006-B4314-00"/>
 <annotations>
 <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
-<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="example"/>
 <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
 </annotations>
 <dataEntryOffsetMappings>
@@ -97,8 +88,8 @@
 <dataEntry label="globals/HeartsDesireApp" offset="223" parentId="globals" symbolId="HeartsDesireApp" type="class"/>
 <dataEntry label="globals/Rez" offset="294" parentId="globals" symbolId="Rez" type="module"/>
 <dataEntry label="globals/Rez/Drawables" offset="347" parentId="Rez" symbolId="Drawables" type="module"/>
-<dataEntry label="globals/Rez/Layouts" offset="391" parentId="Rez" symbolId="Layouts" type="module"/>
-<dataEntry label="globals/Rez/Strings" offset="426" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry label="globals/Rez/Layouts" offset="382" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry label="globals/Rez/Strings" offset="417" parentId="Rez" symbolId="Strings" type="module"/>
 </dataEntryOffsetMappings>
 <functions>
 <functionEntry accessMode="public" endPc="268435471" name="&lt;init&gt;" parent="HeartsDesireView" startPc="268435460">
@@ -132,21 +123,21 @@
 <functionEntry accessMode="public" name="onHide" parent="HeartsDesireView">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268435791" name="onUpdate" parent="HeartsDesireView" startPc="268435576">
+<functionEntry accessMode="public" endPc="268435701" name="onUpdate" parent="HeartsDesireView" startPc="268435576">
 <param id="dc"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268435794" name="onStart" parent="HeartsDesireApp" startPc="268435792">
+<functionEntry accessMode="public" endPc="268435704" name="onStart" parent="HeartsDesireApp" startPc="268435702">
 <param id="state"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268435826" name="getInitialView" parent="HeartsDesireApp" startPc="268435795">
+<functionEntry accessMode="public" endPc="268435736" name="getInitialView" parent="HeartsDesireApp" startPc="268435705">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268435841" name="initialize" parent="HeartsDesireApp" startPc="268435827">
+<functionEntry accessMode="public" endPc="268435751" name="initialize" parent="HeartsDesireApp" startPc="268435737">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268435844" name="onStop" parent="HeartsDesireApp" startPc="268435842">
+<functionEntry accessMode="public" endPc="268435754" name="onStop" parent="HeartsDesireApp" startPc="268435752">
 <param id="state"/>
 <documentation/>
 </functionEntry>
@@ -159,7 +150,7 @@
 <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436047" name="WatchFace" parent="Layouts" startPc="268435845">
+<functionEntry accessMode="public" endPc="268435879" name="WatchFace" parent="Layouts" startPc="268435755">
 <param id="dc"/>
 <documentation/>
 </functionEntry>

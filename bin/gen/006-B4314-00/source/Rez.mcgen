@@ -12,9 +12,11 @@ module Rez {
 
     module Layouts {
         function WatchFace(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
-            var rez_cmp_local_text_TimeLabel = new WatchUi.Text({:identifier=>"TimeLabel", :color=>Graphics.COLOR_BLUE, :locX=>(454 * 0.5), :locY=>((454 - dc.getFontHeight(Graphics.FONT_LARGE)) * 0.5), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_LARGE});
+            var rez_cmp_local_text_TimeLabelHH = new WatchUi.Text({:identifier=>"TimeLabelHH", :color=>Graphics.COLOR_BLUE, :locX=>(454 * 0.5), :locY=>(454 * (10 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SYSTEM_NUMBER_THAI_HOT});
 
-            return [rez_cmp_local_text_TimeLabel] as Array<WatchUi.Drawable>;
+            var rez_cmp_local_text_TimeLabelMM = new WatchUi.Text({:identifier=>"TimeLabelMM", :color=>Graphics.COLOR_RED, :locX=>(454 * 0.5), :locY=>(454 * (40 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SYSTEM_NUMBER_THAI_HOT});
+
+            return [rez_cmp_local_text_TimeLabelHH, rez_cmp_local_text_TimeLabelMM] as Array<WatchUi.Drawable>;
         }
     } // Layouts
 

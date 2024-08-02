@@ -24,9 +24,14 @@ class HeartsDesireView extends WatchUi.WatchFace {
     function onUpdate(dc as Dc) as Void {
         // Get and show the current time
         var clockTime = System.getClockTime();
-        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-        var view = View.findDrawableById("TimeLabel") as Text;
-        view.setText(timeString);
+        var timeStringHH = Lang.format("$1$", [clockTime.hour, clockTime.min.format("%02d")]);
+        var timeStringMM = Lang.format("$2$", [clockTime.hour, clockTime.min.format("%02d")]);
+
+        var viewHH = View.findDrawableById("TimeLabelHH") as Text;
+        var viewMM = View.findDrawableById("TimeLabelMM") as Text;
+        
+        viewHH.setText(timeStringHH);
+        viewMM.setText(timeStringMM);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
