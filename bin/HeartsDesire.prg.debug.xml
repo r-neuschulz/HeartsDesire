@@ -2,24 +2,24 @@
 <debugInfo>
 <manifest filename="D:\Git\Hearts Desire\HeartsDesire\manifest.xml"/>
 <pcToLineNum>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="1" lineNum="6" parent="globals/HeartsDesireView" pc="268435460" symbol="&lt;init&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="1" lineNum="7" parent="globals/HeartsDesireView" pc="268435460" symbol="&lt;init&gt;"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="2" lineNum="5" parent="globals/HeartsDesireApp" pc="268435472" symbol="&lt;init&gt;"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="3" lineNum="26" parent="globals" pc="268435484" symbol="getApp"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="3" lineNum="27" parent="globals" pc="268435494" symbol="getApp"/>
 <entry filename="d:\\Git\\Hearts Desire\\HeartsDesire\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="4" lineNum="7" parent="globals/Rez" pc="268435505" symbol="&lt;init&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="7" lineNum="13" parent="globals/HeartsDesireView" pc="268435525" symbol="onLayout"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="7" lineNum="14" parent="globals/HeartsDesireView" pc="268435527" symbol="onLayout"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="8" parent="globals/HeartsDesireView" pc="268435561" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="9" parent="globals/HeartsDesireView" pc="268435563" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="24" parent="globals/HeartsDesireView" pc="268435576" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="26" parent="globals/HeartsDesireView" pc="268435579" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="27" parent="globals/HeartsDesireView" pc="268435591" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="28" parent="globals/HeartsDesireView" pc="268435645" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="30" parent="globals/HeartsDesireView" pc="268435699" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="31" parent="globals/HeartsDesireView" pc="268435723" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="33" parent="globals/HeartsDesireView" pc="268435747" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="34" parent="globals/HeartsDesireView" pc="268435759" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="37" parent="globals/HeartsDesireView" pc="268435771" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="7" lineNum="14" parent="globals/HeartsDesireView" pc="268435525" symbol="onLayout"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="7" lineNum="15" parent="globals/HeartsDesireView" pc="268435527" symbol="onLayout"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="9" parent="globals/HeartsDesireView" pc="268435561" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="10" parent="globals/HeartsDesireView" pc="268435563" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="25" parent="globals/HeartsDesireView" pc="268435576" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="27" parent="globals/HeartsDesireView" pc="268435579" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="28" parent="globals/HeartsDesireView" pc="268435591" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="29" parent="globals/HeartsDesireView" pc="268435645" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="31" parent="globals/HeartsDesireView" pc="268435699" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="32" parent="globals/HeartsDesireView" pc="268435723" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="34" parent="globals/HeartsDesireView" pc="268435747" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="35" parent="globals/HeartsDesireView" pc="268435759" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="38" parent="globals/HeartsDesireView" pc="268435771" symbol="onUpdate"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="12" lineNum="12" parent="globals/HeartsDesireApp" pc="268435792" symbol="onStart"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="13" lineNum="20" parent="globals/HeartsDesireApp" pc="268435795" symbol="getInitialView"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="13" lineNum="21" parent="globals/HeartsDesireApp" pc="268435797" symbol="getInitialView"/>
@@ -54,7 +54,6 @@
 <entry id="8389349" symbol="justification"/>
 <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
 <entry id="8389377" method="true" symbol="onExitSleep"/>
-<entry id="8388644" module="true" symbol="System"/>
 <entry id="8388769" module="true" object="true" symbol="Rez"/>
 <entry id="8388640" module="true" symbol="Lang"/>
 <entry field="true" id="9" symbol="LauncherIcon"/>

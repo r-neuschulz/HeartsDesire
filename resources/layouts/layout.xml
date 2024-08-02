@@ -1,4 +1,4 @@
 <layout id="WatchFace">
     <label id="TimeLabelHH" x="center" y="10%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
-    <label id="TimeLabelMM" x="center" y="30%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_RED" />
+    <label id="TimeLabelMM" x="center" y="40%" font="Graphics.FONT_SYSTEM_NUMBER_THAI_HOT" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_RED" />
 </layout>

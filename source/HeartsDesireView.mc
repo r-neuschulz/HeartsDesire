@@ -1,6 +1,7 @@
-import Toybox.Graphics;
-import Toybox.Lang;
-import Toybox.System;
+using Toybox.Graphics as Gfx;
+using Toybox.Lang as Lang;
+using Toybox.System as Sys;
+using Toybox.UserProfile as User;
 import Toybox.WatchUi;
 
 class HeartsDesireView extends WatchUi.WatchFace {
@@ -10,7 +11,7 @@ class HeartsDesireView extends WatchUi.WatchFace {
     }
 
     // Load your resources here
-    function onLayout(dc as Dc) as Void {
+    function onLayout(dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
     }
 
@@ -21,15 +22,15 @@ class HeartsDesireView extends WatchUi.WatchFace {
     }
 
     // Update the view
-    function onUpdate(dc as Dc) as Void {
+    function onUpdate(dc) as Void {
         // Get and show the current time
-        var clockTime = System.getClockTime();
+        var clockTime = Sys.getClockTime();
         var timeStringHH = Lang.format("$1$", [clockTime.hour, clockTime.min.format("%02d")]);
         var timeStringMM = Lang.format("$2$", [clockTime.hour, clockTime.min.format("%02d")]);
 
         var viewHH = View.findDrawableById("TimeLabelHH") as Text;
         var viewMM = View.findDrawableById("TimeLabelMM") as Text;
-        
+
         viewHH.setText(timeStringHH);
         viewMM.setText(timeStringMM);
 
