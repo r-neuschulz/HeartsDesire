@@ -1,17 +1,5 @@
 # HeartsDesire Garmin IQ Watchface
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Customization](#customization)
-- [Compatibility](#compatibility)
-- [Screenshots](#screenshots)
-- [Support](#support)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+![Github badge](https://developer.garmin.com/static/connect-iq_badge-dark-35b152d2074fb5abd7394662f78d8a4f.svg)
 
 ## Introduction
 <!-- Briefly describe what the HeartsDesire watchface is and its purpose. -->
@@ -33,7 +21,7 @@ Do one of the following:
 - Download from the Garmin IQ Store, you're ready to go
 - Download the .prg file from this repo, and put it via USB on the root of your device
 
-![Github badge](https://developer.garmin.com/static/connect-iq_badge-dark-35b152d2074fb5abd7394662f78d8a4f.svg)
+
 
 ## Customization
 <!-- Describe any customization options available and how to adjust them. -->
@@ -60,6 +48,3 @@ I'll occasionally check comments on the Garmin IQ Store, too.
 
 ## Acknowledgements
 <!-- Give credit to those who have contributed or inspired the project. -->
-
-
-[https://developer.garmin.com/static/connect-iq_badge-dark-35b152d2074fb5abd7394662f78d8a4f.svg]
