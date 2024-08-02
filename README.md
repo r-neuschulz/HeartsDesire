@@ -1,5 +1,5 @@
 # HeartsDesire Garmin IQ Watchface
-![image]("https://img.shields.io/badge/CIQ_Store_downloads-38-green?style=flat")
+![Downloads](https://img.shields.io/badge/CIQ_Store_downloads-38-green?style=flat-square)
 ![Github badge](https://developer.garmin.com/static/connect-iq_badge-dark-35b152d2074fb5abd7394662f78d8a4f.svg)
 
 ## Introduction
@@ -11,7 +11,7 @@ I always been a big fan of how the Vivoactive HR displayed its heartrate graph. 
 <!-- List the key features of the watchface. -->
 
 - Show the time (duh)
-- Show 4-6 h of HR history
+- Show 4-6 h of HR history on the main page
 - Show the current HR
 - Switch between multiple color schemes
 
