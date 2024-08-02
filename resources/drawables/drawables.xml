@@ -1,3 +1,4 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <bitmap filename="Avengers.svg" id="example" scaleY="100%" scaleRelativeTo="screen" />
 </drawables>
