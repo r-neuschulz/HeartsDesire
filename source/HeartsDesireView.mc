@@ -1,15 +1,9 @@
-//
-// Copyright 2016-2021 by Garmin Ltd. or its subsidiaries.
-// Subject to Garmin SDK License Agreement and Wearables
-// Application Developer Agreement.
-//
-
 import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.SensorHistory;
-
 import Toybox.System;
 import Toybox.WatchUi;
+import Toybox.UserProfile;
 
 //! Display graph of heart rate history
 class HeartRateHistoryView extends WatchUi.View {
@@ -24,7 +18,8 @@ class HeartRateHistoryView extends WatchUi.View {
     private function getHeartRateIterator() as SensorHistoryIterator? {
         if (Toybox has :SensorHistory && SensorHistory has :getHeartRateHistory) {
             var getMethod = new Lang.Method(SensorHistory, :getHeartRateHistory);
-            return getMethod.invoke({}) as SensorHistoryIterator;
+            var sixHours = new Time.Duration(21600);  // Six hours in seconds
+            return getMethod.invoke({:period => sixHours, :order => SensorHistory.ORDER_OLDEST_FIRST}) as SensorHistoryIterator;
         }
         return null;
     }
@@ -32,41 +27,45 @@ class HeartRateHistoryView extends WatchUi.View {
     //! Update the view
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
+        //Get the hear Rate Zones (todo: only determine once)
+        var heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
+
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
-        
+        var sensorIter = getHeartRateIterator();
+        if (sensorIter != null) {
+            var sample = sensorIter.next();
+            var x = 0;
+            var graphBottom = dc.getHeight();
+            var graphHeight = graphBottom * 0.45;
 
-        if (Toybox has :SensorHistory) {
-            var sensorIter = getHeartRateIterator();
-            if (sensorIter != null) {
-                var sample = sensorIter.next();
-                var x = 0;
-                var graphBottom = dc.getHeight();
-                var graphHeight = graphBottom * 0.35;
+            dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
 
-                dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
-
-                while (sample != null) {
-                    var heartRate = sample.data;
-                    if (heartRate != null) {
-                        var y = graphBottom - (heartRate / 200.0) * graphHeight;
-                        dc.drawLine(x, graphBottom, x, y);
+            while (sample != null) {
+                var heartRate = sample.data;
+                if (heartRate != null) {
+                    var y = graphBottom - (heartRate / 200.0) * graphHeight;
+                    // Color it, depending on the HR Zones, currently 
+                    if (heartRate < heartRateZones[0]) {
+                        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
+                    } else if (heartRate <= heartRateZones[1]) {
+                        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
+                    } else if (heartRate <= heartRateZones[2]) {
+                        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
+                    } else if (heartRate <= heartRateZones[3]) {
+                        dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
+                    } else if (heartRate <= heartRateZones[4]) {
+                        dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_ORANGE);
+                    } else {
+                        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
                     }
-                    x++;
-                    sample = sensorIter.next();
+
+                    dc.drawLine(x, graphBottom, x, y);
                 }
-
-            } else {
-                var message = "Heart Rate\nSensor not available";
-                dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-                dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+                x++;
+                sample = sensorIter.next();
             }
-
-        } else {
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-            var message = "Sensor History\nNot Supported";
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
         }
 
         // Get and show the current time
@@ -76,11 +75,10 @@ class HeartRateHistoryView extends WatchUi.View {
 
         // Draw HH part
         dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.10, Graphics.FONT_SYSTEM_NUMBER_THAI_HOT, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.25, Graphics.FONT_SYSTEM_NUMBER_THAI_HOT, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         // Draw MM part
         dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.40, Graphics.FONT_SYSTEM_NUMBER_THAI_HOT, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
-
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.55, Graphics.FONT_SYSTEM_NUMBER_THAI_HOT, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
     }
 }
