@@ -38,7 +38,7 @@ Currently, the following Watches are supported:
 ## Screenshots
 <!-- Include screenshots of the watchface in action. -->
 
-![a screenshot of the watch](image.png)
+<img src="image.png" alt="screenshot" width="200"/>
 
 ## Support
 
