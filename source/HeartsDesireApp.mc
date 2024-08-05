@@ -18,7 +18,7 @@ class HeartsDesireApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [ new HeartsDesireView() ];
+        return [ new HeartRateHistoryView() ];
     }
 
 }
