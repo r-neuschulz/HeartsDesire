@@ -6,6 +6,7 @@ import Toybox.WatchUi;
 import Toybox.UserProfile;
 
 //! Display graph of heart rate history
+//! Display graph of heart rate history
 class HeartRateHistoryView extends WatchUi.View {
 
     //! Instance variable to store heart rate zones
@@ -20,7 +21,7 @@ class HeartRateHistoryView extends WatchUi.View {
         heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
 
         // Init the correct font        
-        bigNumProtomolecule=WatchUi.loadResource(Rez.Fonts.protomoleculefont); 
+        bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont); 
     }
 
     //! Get the heart rate iterator
@@ -35,12 +36,8 @@ class HeartRateHistoryView extends WatchUi.View {
     }
 
     //! Update the view
-    
-
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
-        //Get the hear Rate Zones (todo: only determine once)
-
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
@@ -58,17 +55,37 @@ class HeartRateHistoryView extends WatchUi.View {
         dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.60, bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         var sensorIter = getHeartRateIterator();
-        if (sensorIter != null ) {
-            var sample = sensorIter.next();
-            var x = 0;
+        if (sensorIter != null) {
             var graphBottom = dc.getHeight();
-            var graphHeight = graphBottom * 0.40;
+            var graphHeight = dc.getHeight() * 0.40;
+            var graphWidth = dc.getWidth();
 
-            while (sample != null) {
-                var heartRate = sample.data;
-                if (heartRate != null) {
-                    var y = graphBottom - (heartRate / 200.0) * graphHeight;
-                    // Color it, depending on the HR Zones, currently 
+            // Determine the total time span in the data
+            var oldestTime = sensorIter.getOldestSampleTime().value();
+            var newestTime = sensorIter.getNewestSampleTime().value();
+            var totalDuration = newestTime - oldestTime;
+
+            var sample = sensorIter.next();
+            var nextSample = sample;
+            var nextSampleTime = (sample != null) ? sample.when.value() : null;
+
+            for (var x = 0; x < graphWidth; x++) {
+                // Calculate the target time for this x position
+                var targetTime = oldestTime + (totalDuration * x / graphWidth);
+
+                // Find the nearest sample to the target time
+                while (nextSampleTime != null && nextSampleTime < targetTime) {
+                    sample = nextSample;
+                    nextSample = sensorIter.next();
+                    nextSampleTime = (nextSample != null) ? nextSample.when.value() : null;
+                }
+
+                if (sample != null && sample.data != null) {
+                    var heartRate = sample.data;
+                                      
+                    var y = graphBottom*1.0 - (heartRate*1.0 / heartRateZones[5]*1.0) * graphHeight;
+
+                    // Color it, depending on the HR Zones, currently set for Running
                     if (heartRate < heartRateZones[0]) {
                         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
                     } else if (heartRate <= heartRateZones[1]) {
@@ -85,10 +102,7 @@ class HeartRateHistoryView extends WatchUi.View {
 
                     dc.drawLine(x, graphBottom, x, y);
                 }
-                x++;
-                sample = sensorIter.next();
             }
         }
-
-        }
+    }
 }
