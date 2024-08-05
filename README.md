@@ -12,8 +12,8 @@ I always been a big fan of how the Vivoactive HR displayed its heartrate graph. 
 
 - Show the time (duh)
 - Show 4-6 h of HR history on the main page
-- Show the current HR
-- Switch between multiple color schemes
+- Show the current HR (todo)
+- Switch between multiple color schemes (todo)
 
 ## Installation Instructions
 <!-- Provide step-by-step instructions on how to install the watchface on a Garmin device. -->
@@ -37,6 +37,8 @@ Currently, the following Watches are supported:
 
 ## Screenshots
 <!-- Include screenshots of the watchface in action. -->
+
+![a screenshot of the watch](image.png)
 
 ## Support
 
