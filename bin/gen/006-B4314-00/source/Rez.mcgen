@@ -10,6 +10,10 @@ module Rez {
         (:initialized) var LauncherIcon as ResourceId;
     } // Drawables
 
+    module Fonts {
+        (:initialized) var protomoleculefont as ResourceId;
+    } // Fonts
+
     module Layouts {
         function WatchFace(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
             var rez_cmp_local_text_TimeLabelHH = new WatchUi.Text({:identifier=>"TimeLabelHH", :color=>Graphics.COLOR_BLUE, :locX=>(454 * 0.5), :locY=>(454 * (10 / 100.0)), :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_SYSTEM_NUMBER_THAI_HOT});

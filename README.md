@@ -5,7 +5,7 @@
 ## Introduction
 <!-- Briefly describe what the HeartsDesire watchface is and its purpose. -->
 
-I always been a big fan of how the Vivoactive HR displayed its heartrate graph. It was always highly informative, clearly designed, and . This repo aims to recreate that charming style with a basic watchface to have the Heartrate history visible at all times on round watches.
+I always been a big fan of how the Vivoactive HR displayed its heartrate graph. It was always highly informative, clearly designed, and . Th is repo aims to recreate that charming style with a basic watchface to have the Heartrate history visible at all times on round watches.
 
 ## Features
 <!-- List the key features of the watchface. -->

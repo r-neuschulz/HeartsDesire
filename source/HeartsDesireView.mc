@@ -8,9 +8,19 @@ import Toybox.UserProfile;
 //! Display graph of heart rate history
 class HeartRateHistoryView extends WatchUi.View {
 
+    //! Instance variable to store heart rate zones
+    private var heartRateZones as Lang.Array;
+    private var bigNumProtomolecule;
+
     //! Constructor
     public function initialize() {
         View.initialize();
+
+        // Determine and store HRZones once
+        heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
+
+        // Init the correct font        
+        bigNumProtomolecule=WatchUi.loadResource(Rez.Fonts.protomoleculefont); 
     }
 
     //! Get the heart rate iterator
@@ -25,22 +35,34 @@ class HeartRateHistoryView extends WatchUi.View {
     }
 
     //! Update the view
+    
+
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
         //Get the hear Rate Zones (todo: only determine once)
-        var heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
 
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
+        // Get and show the current time
+        var clockTime = System.getClockTime();
+        var timeStringHH = Lang.format("$1$", [clockTime.hour.format("%02d")]);
+        var timeStringMM = Lang.format("$1$", [clockTime.min.format("%02d")]);
+
+        // Draw HH part
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.28, bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+
+        // Draw MM part
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.60, bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+
         var sensorIter = getHeartRateIterator();
-        if (sensorIter != null) {
+        if (sensorIter != null ) {
             var sample = sensorIter.next();
             var x = 0;
             var graphBottom = dc.getHeight();
-            var graphHeight = graphBottom * 0.45;
-
-            dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
+            var graphHeight = graphBottom * 0.40;
 
             while (sample != null) {
                 var heartRate = sample.data;
@@ -68,17 +90,5 @@ class HeartRateHistoryView extends WatchUi.View {
             }
         }
 
-        // Get and show the current time
-        var clockTime = System.getClockTime();
-        var timeStringHH = Lang.format("$1$", [clockTime.hour.format("%02d")]);
-        var timeStringMM = Lang.format("$1$", [clockTime.min.format("%02d")]);
-
-        // Draw HH part
-        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.25, Graphics.FONT_SYSTEM_NUMBER_THAI_HOT, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
-
-        // Draw MM part
-        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.55, Graphics.FONT_SYSTEM_NUMBER_THAI_HOT, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
-    }
+        }
 }
