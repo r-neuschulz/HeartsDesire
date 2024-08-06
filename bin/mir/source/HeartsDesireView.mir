@@ -10,667 +10,777 @@ import Toybox.System;
 import Toybox.WatchUi;
 [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 6; ]
 import Toybox.UserProfile;
-[ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 10; ]
+[ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 9; ]
 class HeartRateHistoryView extends WatchUi.View{
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 10; ]
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 9; ]
     <init> {
     }
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 10; ]
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 9; ]
     static
     <init> {
     }
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 12; @position = 16; ]
+    private
+    var _heartRateZones as Lang.Array or Null;
     [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 13; @position = 16; ]
     private
-    var _heartRateZones as Lang.Array;
+    var _bigNumProtomolecule as Toybox.WatchUi.FontResource or Null;
     [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 14; @position = 16; ]
     private
-    var _bigNumProtomolecule;
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 15; @position = 16; ]
-    private
     var _width;
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 15; @position = 24; ]
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 14; @position = 24; ]
     private
-    var _height as Lang.Number;
+    var _height as Lang.Number or Null;
     //! Constructor
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 18; ]
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 17; ]
     public
     function initialize() as Void {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_18_33_31_4_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 19 8 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_17_33_33_4_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 18 8 ]
         %tmp.2 = getv ? :View;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 22 8 ]
-        %tmp.4 = getm $.Toybox.UserProfile;
-        %tmp.5 = getv function %tmp.4 :getHeartRateZones;
-        %tmp.6 = getm $.Toybox.UserProfile;
-        %tmp.7 = getv %tmp.6 :HR_ZONE_SPORT_GENERIC;
-        %tmp.8 = invoke %tmp.4 %tmp.5(%tmp.7);
-        putv self :_heartRateZones %tmp.8;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 25 8 ]
-        %tmp.9 = getm $.Toybox.WatchUi;
-        %tmp.10 = getv function %tmp.9 :loadResource;
-        %tmp.12 = getv ? :Rez;
-        %tmp.13 = getv %tmp.12 :Fonts;
-        %tmp.14 = getv %tmp.13 :protomoleculefont;
-        %tmp.15 = invoke %tmp.9 %tmp.10(%tmp.14);
-        putv self :_bigNumProtomolecule %tmp.15;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 20 8 ]
+        %tmp.4 = getm $.Toybox.System;
+        %tmp.5 = getv function %tmp.4 :println;
+        %tmp.6 = "Initializing HeartRateHistoryView";
+        invoke %tmp.4 %tmp.5(%tmp.6);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 23 8 ]
+        %tmp.7 = getm $.Toybox.UserProfile;
+        %tmp.8 = getv function %tmp.7 :getHeartRateZones;
+        %tmp.9 = getm $.Toybox.UserProfile;
+        %tmp.10 = getv %tmp.9 :HR_ZONE_SPORT_GENERIC;
+        %tmp.11 = invoke %tmp.7 %tmp.8(%tmp.10);
+        putv self :_heartRateZones %tmp.11;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 24 8 ]
+        %tmp.12 = getm $.Toybox.System;
+        %tmp.13 = getv function %tmp.12 :println;
+        %tmp.14 = "Heart rate zones: ";
+        %tmp.16 = getv ? :_heartRateZones;
+        %tmp.17 = getv function %tmp.16 :toString;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = add %tmp.14 %tmp.18;
+        invoke %tmp.12 %tmp.13(%tmp.19);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 27 8 ]
+        %tmp.20 = getm $.Toybox.WatchUi;
+        %tmp.21 = getv function %tmp.20 :loadResource;
+        %tmp.23 = getv ? :Rez;
+        %tmp.24 = getv %tmp.23 :Fonts;
+        %tmp.25 = getv %tmp.24 :protomoleculefont;
+        %tmp.26 = invoke %tmp.20 %tmp.21(%tmp.25);
+        putv self :_bigNumProtomolecule %tmp.26;
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 28 8 ]
-        %tmp.16 = 50;
-        putv self :_width %tmp.16;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 29 8 ]
-        %tmp.17 = 50;
-        putv self :_height %tmp.17;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_18_33_31_4_stop:
+        %tmp.27 = getm $.Toybox.System;
+        %tmp.28 = getv function %tmp.27 :println;
+        %tmp.29 = "Font loaded: ";
+        %tmp.31 = getv ? :_bigNumProtomolecule;
+        %tmp.32 = add %tmp.29 %tmp.31;
+        invoke %tmp.27 %tmp.28(%tmp.32);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 31 8 ]
+        %tmp.33 = 50;
+        putv self :_width %tmp.33;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 32 8 ]
+        %tmp.34 = 50;
+        putv self :_height %tmp.34;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_17_33_33_4_stop:
     }
     //! Get the heart rate iterator
     //! @return The heart rate iterator
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 35; ]
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 37; ]
     private
     function getHeartRateIterator() as SensorHistoryIterator or Null {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_35_70_42_4_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 36 8 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_8_40_8_if_stmt:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_12_36_60_begin:
-        %tmp.2 = getv ? :Toybox;
-        %tmp.4 = const :SensorHistory;
-        %tmp.5 = canhazplz %tmp.2 %tmp.4;
-        bf %tmp.5 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_8_40_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_41_36_60_true:
-        %tmp.7 = getm $.Toybox.SensorHistory;
-        %tmp.9 = const :getHeartRateHistory;
-        %tmp.10 = canhazplz %tmp.7 %tmp.9;
-        push %tmp.10;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_41_36_60_end:
-        %tmp.11 = phi [%tmp.5 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_12_36_60_begin] [%tmp.10 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_41_36_60_true] [%tmp.11 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_41_36_60_end];
-        bf %tmp.11 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_8_40_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_8_40_8_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_81_40_8_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 37 12 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_81_40_8_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_81_40_8_stop" ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_37_70_46_4_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 38 8 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "Getting heart rate iterator";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 39 8 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_8_44_8_if_stmt:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_12_39_60_begin:
+        %tmp.5 = getv ? :Toybox;
+        %tmp.7 = const :SensorHistory;
+        %tmp.8 = canhazplz %tmp.5 %tmp.7;
+        bf %tmp.8 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_8_44_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_41_39_60_true:
+        %tmp.10 = getm $.Toybox.SensorHistory;
+        %tmp.12 = const :getHeartRateHistory;
+        %tmp.13 = canhazplz %tmp.10 %tmp.12;
+        push %tmp.13;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_41_39_60_end:
+        %tmp.14 = phi [%tmp.8 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_12_39_60_begin] [%tmp.13 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_41_39_60_true] [%tmp.14 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_41_39_60_end];
+        bf %tmp.14 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_8_44_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_8_44_8_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_81_44_8_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 40 12 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_81_44_8_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_81_44_8_stop" ]
         %getMethod.1 = local;
-        %tmp.14 = getm $.Toybox.Lang;
-        %tmp.15 = getv function ? %tmp.14 :Method;
-        %tmp.17 = getm $.Toybox.SensorHistory;
-        %tmp.18 = as %tmp.17 { (interface { var getHeartRateHistory; }) };
-        %tmp.20 = const :getHeartRateHistory;
-        %tmp.12 = newc %tmp.15 (%tmp.18, %tmp.20);
-        lputv %getMethod.1 %tmp.12;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 38 12 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_81_40_8_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_81_40_8_stop" ]
+        %tmp.17 = getm $.Toybox.Lang;
+        %tmp.18 = getv function ? %tmp.17 :Method;
+        %tmp.20 = getm $.Toybox.SensorHistory;
+        %tmp.21 = as %tmp.20 { (interface { var getHeartRateHistory; }) };
+        %tmp.23 = const :getHeartRateHistory;
+        %tmp.15 = newc %tmp.18 (%tmp.21, %tmp.23);
+        lputv %getMethod.1 %tmp.15;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 41 12 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_81_44_8_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_81_44_8_stop" ]
         %sixHours.2 = local;
-        %tmp.24 = getv ? :Time;
-        %tmp.25 = getv function ? %tmp.24 :Duration;
-        %tmp.26 = 21600;
-        %tmp.21 = newc %tmp.25 (%tmp.26);
-        lputv %sixHours.2 %tmp.21;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 39 12 ]
-        %tmp.27 = lgetv %getMethod.1;
-        %tmp.28 = getv function %tmp.27 :invoke;
-        %tmp.29 = newd 2;
-        %tmp.31 = const :period;
-        %tmp.33 = lgetv %sixHours.2;
-        %tmp.34 = dup %tmp.29;
-        %tmp.35 = aputv %tmp.34 %tmp.31 %tmp.33;
-        %tmp.37 = const :order;
-        %tmp.38 = getm $.Toybox.SensorHistory;
-        %tmp.39 = getv %tmp.38 :ORDER_OLDEST_FIRST;
+        %tmp.27 = getv ? :Time;
+        %tmp.28 = getv function ? %tmp.27 :Duration;
+        %tmp.29 = 21600;
+        %tmp.24 = newc %tmp.28 (%tmp.29);
+        lputv %sixHours.2 %tmp.24;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 42 12 ]
+        %tmp.30 = getm $.Toybox.System;
+        %tmp.31 = getv function %tmp.30 :println;
+        %tmp.32 = "Invoking getHeartRateHistory method";
+        invoke %tmp.30 %tmp.31(%tmp.32);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 43 12 ]
+        %tmp.33 = lgetv %getMethod.1;
+        %tmp.34 = getv function %tmp.33 :invoke;
+        %tmp.35 = newd 2;
+        %tmp.37 = const :period;
+        %tmp.39 = lgetv %sixHours.2;
         %tmp.40 = dup %tmp.35;
         %tmp.41 = aputv %tmp.40 %tmp.37 %tmp.39;
-        %tmp.42 = invoke %tmp.27 %tmp.28(%tmp.41);
-        %tmp.43 = as %tmp.42 SensorHistoryIterator;
-        ret %tmp.43;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_81_40_8_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_8_40_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_36_8_40_8_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 41 8 ]
-        %tmp.44 = null;
-        ret %tmp.44;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_35_70_42_4_stop:
-    }
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 44; ]
-    public
-    function onShow() as Void {
+        %tmp.43 = const :order;
+        %tmp.44 = getm $.Toybox.SensorHistory;
+        %tmp.45 = getv %tmp.44 :ORDER_OLDEST_FIRST;
+        %tmp.46 = dup %tmp.41;
+        %tmp.47 = aputv %tmp.46 %tmp.43 %tmp.45;
+        %tmp.48 = invoke %tmp.33 %tmp.34(%tmp.47);
+        %tmp.49 = as %tmp.48 SensorHistoryIterator;
+        ret %tmp.49;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_81_44_8_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_8_44_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_39_8_44_8_if_end:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 45 8 ]
+        %tmp.50 = null;
+        ret %tmp.50;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_37_70_46_4_stop:
     }
     [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 48; ]
-    function onLayout(dc) {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_48_26_51_5_start:
+    public
+    function onShow() as Void {
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_48_37_50_4_start:
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 49 8 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "HeartRateHistoryView shown";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_48_37_50_4_stop:
+    }
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 52; ]
+    function onLayout(dc) {
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_52_26_56_4_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 53 8 ]
         %tmp.1 = lgetv %dc;
         %tmp.2 = getv function %tmp.1 :getWidth;
         %tmp.3 = invoke %tmp.1 %tmp.2();
         putv self :_width %tmp.3;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 50 8 ]
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 54 8 ]
         %tmp.4 = lgetv %dc;
         %tmp.5 = getv function %tmp.4 :getHeight;
         %tmp.6 = invoke %tmp.4 %tmp.5();
         putv self :_height %tmp.6;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_48_26_51_5_stop:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 55 8 ]
+        %tmp.7 = getm $.Toybox.System;
+        %tmp.8 = getv function %tmp.7 :println;
+        %tmp.9 = "Layout dimensions: width=";
+        %tmp.11 = getv ? :_width;
+        %tmp.12 = add %tmp.9 %tmp.11;
+        %tmp.13 = ", height=";
+        %tmp.14 = add %tmp.12 %tmp.13;
+        %tmp.16 = getv ? :_height;
+        %tmp.17 = add %tmp.14 %tmp.16;
+        invoke %tmp.7 %tmp.8(%tmp.17);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_52_26_56_4_stop:
     }
     //! Update the view
     //! @param dc Device context
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 55; ]
+    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 60; ]
     public
     function onUpdate(dc as Dc) as Void {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 60 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %clockTime.1 = local;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 61 8 ]
         %tmp.1 = getm $.Toybox.System;
-        %tmp.2 = getv function %tmp.1 :getClockTime;
-        %tmp.3 = invoke %tmp.1 %tmp.2();
-        lputv %clockTime.1 %tmp.3;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 63 8 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_8_65_8_if_stmt:
-        %tmp.5 = lgetv %clockTime.1;
-        %tmp.6 = null;
-        %tmp.7 = eq %tmp.5 %tmp.6;
-        bf %tmp.7 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_8_65_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_8_65_8_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_30_65_8_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 64 12 ]
-        ret ?;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_30_65_8_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_8_65_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_63_8_65_8_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 67 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %timeStringHH.2 = local;
-        %tmp.8 = getm $.Toybox.Lang;
-        %tmp.9 = getv function %tmp.8 :format;
-        %tmp.10 = "$1$";
-        %tmp.11 = newa 1;
-        %tmp.12 = lgetv %clockTime.1;
-        %tmp.13 = getv %tmp.12 :hour;
-        %tmp.14 = getv function %tmp.13 :format;
-        %tmp.15 = "%02d";
-        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
-        %tmp.17 = dup %tmp.11;
-        %tmp.18 = aputv %tmp.17 0 %tmp.16;
-        %tmp.19 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.18);
-        lputv %timeStringHH.2 %tmp.19;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "Updating view";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 64 8 ]
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :setColor;
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :COLOR_BLACK;
+        %tmp.8 = getm $.Toybox.Graphics;
+        %tmp.9 = getv %tmp.8 :COLOR_BLACK;
+        invoke %tmp.4 %tmp.5(%tmp.7, %tmp.9);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 65 8 ]
+        %tmp.10 = lgetv %dc;
+        %tmp.11 = getv function %tmp.10 :clear;
+        invoke %tmp.10 %tmp.11();
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 68 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %timeStringMM.3 = local;
-        %tmp.20 = getm $.Toybox.Lang;
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %clockTime.1 = local;
+        %tmp.12 = getm $.Toybox.System;
+        %tmp.13 = getv function %tmp.12 :getClockTime;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %clockTime.1 %tmp.14;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 69 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %timeStringHH.2 = local;
+        %tmp.15 = getm $.Toybox.Lang;
+        %tmp.16 = getv function %tmp.15 :format;
+        %tmp.17 = "$1$";
+        %tmp.18 = newa 1;
+        %tmp.19 = lgetv %clockTime.1;
+        %tmp.20 = getv %tmp.19 :hour;
         %tmp.21 = getv function %tmp.20 :format;
-        %tmp.22 = "$1$";
-        %tmp.23 = newa 1;
-        %tmp.24 = lgetv %clockTime.1;
-        %tmp.25 = getv %tmp.24 :min;
-        %tmp.26 = getv function %tmp.25 :format;
-        %tmp.27 = "%02d";
-        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
-        %tmp.29 = dup %tmp.23;
-        %tmp.30 = aputv %tmp.29 0 %tmp.28;
-        %tmp.31 = invoke %tmp.20 %tmp.21(%tmp.22, %tmp.30);
-        lputv %timeStringMM.3 %tmp.31;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 71 8 ]
-        %tmp.32 = lgetv %dc;
-        %tmp.33 = getv function %tmp.32 :setColor;
-        %tmp.34 = getm $.Toybox.Graphics;
-        %tmp.35 = getv %tmp.34 :COLOR_WHITE;
-        %tmp.36 = getm $.Toybox.Graphics;
-        %tmp.37 = getv %tmp.36 :COLOR_BLACK;
-        invoke %tmp.32 %tmp.33(%tmp.35, %tmp.37);
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 72 8 ]
-        %tmp.38 = lgetv %dc;
-        %tmp.39 = getv function %tmp.38 :drawText;
-        %tmp.41 = getv ? :_width;
-        %tmp.42 = 2;
-        %tmp.43 = div %tmp.41 %tmp.42;
-        %tmp.45 = getv ? :_height;
-        %tmp.46 = 0.28;
-        %tmp.47 = mul %tmp.45 %tmp.46;
-        %tmp.49 = getv ? :_bigNumProtomolecule;
-        %tmp.51 = lgetv %timeStringHH.2;
-        %tmp.52 = getm $.Toybox.Graphics;
-        %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_CENTER;
-        %tmp.54 = getm $.Toybox.Graphics;
-        %tmp.55 = getv %tmp.54 :TEXT_JUSTIFY_VCENTER;
-        %tmp.56 = bitor %tmp.53 %tmp.55;
-        invoke %tmp.38 %tmp.39(%tmp.43, %tmp.47, %tmp.49, %tmp.51, %tmp.56);
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 75 8 ]
-        %tmp.57 = lgetv %dc;
-        %tmp.58 = getv function %tmp.57 :setColor;
+        %tmp.22 = "%02d";
+        %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+        %tmp.24 = dup %tmp.18;
+        %tmp.25 = aputv %tmp.24 0 %tmp.23;
+        %tmp.26 = invoke %tmp.15 %tmp.16(%tmp.17, %tmp.25);
+        lputv %timeStringHH.2 %tmp.26;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 70 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %timeStringMM.3 = local;
+        %tmp.27 = getm $.Toybox.Lang;
+        %tmp.28 = getv function %tmp.27 :format;
+        %tmp.29 = "$1$";
+        %tmp.30 = newa 1;
+        %tmp.31 = lgetv %clockTime.1;
+        %tmp.32 = getv %tmp.31 :min;
+        %tmp.33 = getv function %tmp.32 :format;
+        %tmp.34 = "%02d";
+        %tmp.35 = invoke %tmp.32 %tmp.33(%tmp.34);
+        %tmp.36 = dup %tmp.30;
+        %tmp.37 = aputv %tmp.36 0 %tmp.35;
+        %tmp.38 = invoke %tmp.27 %tmp.28(%tmp.29, %tmp.37);
+        lputv %timeStringMM.3 %tmp.38;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 73 8 ]
+        %tmp.39 = lgetv %dc;
+        %tmp.40 = getv function %tmp.39 :setColor;
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :COLOR_WHITE;
+        %tmp.43 = getm $.Toybox.Graphics;
+        %tmp.44 = getv %tmp.43 :COLOR_BLACK;
+        invoke %tmp.39 %tmp.40(%tmp.42, %tmp.44);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 74 8 ]
+        %tmp.45 = lgetv %dc;
+        %tmp.46 = getv function %tmp.45 :drawText;
+        %tmp.48 = getv ? :_width;
+        %tmp.49 = 2;
+        %tmp.50 = div %tmp.48 %tmp.49;
+        %tmp.52 = getv ? :_height;
+        %tmp.53 = 0.28;
+        %tmp.54 = mul %tmp.52 %tmp.53;
+        %tmp.56 = getv ? :_bigNumProtomolecule;
+        %tmp.58 = lgetv %timeStringHH.2;
         %tmp.59 = getm $.Toybox.Graphics;
-        %tmp.60 = getv %tmp.59 :COLOR_LT_GRAY;
+        %tmp.60 = getv %tmp.59 :TEXT_JUSTIFY_CENTER;
         %tmp.61 = getm $.Toybox.Graphics;
-        %tmp.62 = getv %tmp.61 :COLOR_BLACK;
-        invoke %tmp.57 %tmp.58(%tmp.60, %tmp.62);
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 76 8 ]
-        %tmp.63 = lgetv %dc;
-        %tmp.64 = getv function %tmp.63 :drawText;
-        %tmp.66 = getv ? :_width;
-        %tmp.67 = 2;
-        %tmp.68 = div %tmp.66 %tmp.67;
-        %tmp.70 = getv ? :_height;
-        %tmp.71 = 0.60;
-        %tmp.72 = mul %tmp.70 %tmp.71;
-        %tmp.74 = getv ? :_bigNumProtomolecule;
-        %tmp.76 = lgetv %timeStringMM.3;
-        %tmp.77 = getm $.Toybox.Graphics;
-        %tmp.78 = getv %tmp.77 :TEXT_JUSTIFY_CENTER;
-        %tmp.79 = getm $.Toybox.Graphics;
-        %tmp.80 = getv %tmp.79 :TEXT_JUSTIFY_VCENTER;
-        %tmp.81 = bitor %tmp.78 %tmp.80;
-        invoke %tmp.63 %tmp.64(%tmp.68, %tmp.72, %tmp.74, %tmp.76, %tmp.81);
+        %tmp.62 = getv %tmp.61 :TEXT_JUSTIFY_VCENTER;
+        %tmp.63 = bitor %tmp.60 %tmp.62;
+        invoke %tmp.45 %tmp.46(%tmp.50, %tmp.54, %tmp.56, %tmp.58, %tmp.63);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 77 8 ]
+        %tmp.64 = lgetv %dc;
+        %tmp.65 = getv function %tmp.64 :setColor;
+        %tmp.66 = getm $.Toybox.Graphics;
+        %tmp.67 = getv %tmp.66 :COLOR_LT_GRAY;
+        %tmp.68 = getm $.Toybox.Graphics;
+        %tmp.69 = getv %tmp.68 :COLOR_BLACK;
+        invoke %tmp.64 %tmp.65(%tmp.67, %tmp.69);
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 78 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
+        %tmp.70 = lgetv %dc;
+        %tmp.71 = getv function %tmp.70 :drawText;
+        %tmp.73 = getv ? :_width;
+        %tmp.74 = 2;
+        %tmp.75 = div %tmp.73 %tmp.74;
+        %tmp.77 = getv ? :_height;
+        %tmp.78 = 0.60;
+        %tmp.79 = mul %tmp.77 %tmp.78;
+        %tmp.81 = getv ? :_bigNumProtomolecule;
+        %tmp.83 = lgetv %timeStringMM.3;
+        %tmp.84 = getm $.Toybox.Graphics;
+        %tmp.85 = getv %tmp.84 :TEXT_JUSTIFY_CENTER;
+        %tmp.86 = getm $.Toybox.Graphics;
+        %tmp.87 = getv %tmp.86 :TEXT_JUSTIFY_VCENTER;
+        %tmp.88 = bitor %tmp.85 %tmp.87;
+        invoke %tmp.70 %tmp.71(%tmp.75, %tmp.79, %tmp.81, %tmp.83, %tmp.88);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 80 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
         %sensorIter.4 = local;
-        %tmp.82 = self;
-        %tmp.83 = getv function %tmp.82 :getHeartRateIterator;
-        %tmp.84 = invoke %tmp.82 %tmp.83();
-        lputv %sensorIter.4 %tmp.84;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 81 8 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_8_83_8_if_stmt:
-        %tmp.86 = lgetv %sensorIter.4;
-        %tmp.87 = null;
-        %tmp.88 = eq %tmp.86 %tmp.87;
-        bf %tmp.88 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_8_83_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_8_83_8_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_32_83_8_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 82 12 ]
+        %tmp.89 = self;
+        %tmp.90 = getv function %tmp.89 :getHeartRateIterator;
+        %tmp.91 = invoke %tmp.89 %tmp.90();
+        lputv %sensorIter.4 %tmp.91;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 83 8 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_8_86_8_if_stmt:
+        %tmp.93 = lgetv %sensorIter.4;
+        %tmp.94 = null;
+        %tmp.95 = eq %tmp.93 %tmp.94;
+        bf %tmp.95 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_8_86_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_8_86_8_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_32_86_8_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 84 12 ]
+        %tmp.96 = getm $.Toybox.System;
+        %tmp.97 = getv function %tmp.96 :println;
+        %tmp.98 = "No heart rate data available";
+        invoke %tmp.96 %tmp.97(%tmp.98);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 85 12 ]
         ret ?;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_32_83_8_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_8_83_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_81_8_83_8_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 85 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_32_86_8_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_8_86_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_83_8_86_8_if_end:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 88 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
         %graphBottom.5 = local;
-        %tmp.90 = getv ? :_height;
-        lputv %graphBottom.5 %tmp.90;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 86 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
+        %tmp.100 = getv ? :_height;
+        lputv %graphBottom.5 %tmp.100;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 89 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
         %graphHeight.6 = local;
-        %tmp.92 = getv ? :_height;
-        %tmp.93 = 0.40;
-        %tmp.94 = mul %tmp.92 %tmp.93;
-        lputv %graphHeight.6 %tmp.94;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 87 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %graphWidth.7 = local;
-        %tmp.96 = getv ? :_width;
-        lputv %graphWidth.7 %tmp.96;
+        %tmp.102 = getv ? :_height;
+        %tmp.103 = 0.40;
+        %tmp.104 = mul %tmp.102 %tmp.103;
+        lputv %graphHeight.6 %tmp.104;
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 90 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %graphWidth.7 = local;
+        %tmp.106 = getv ? :_width;
+        lputv %graphWidth.7 %tmp.106;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 93 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
         %oldestTimeMoment.8 = local;
-        %tmp.97 = lgetv %sensorIter.4;
-        %tmp.98 = getv function %tmp.97 :getOldestSampleTime;
-        %tmp.99 = invoke %tmp.97 %tmp.98();
-        %tmp.100 = as %tmp.99 Toybox.Time.Moment;
-        lputv %oldestTimeMoment.8 %tmp.100;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 91 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %newestTimeMoment.9 = local;
-        %tmp.101 = lgetv %sensorIter.4;
-        %tmp.102 = getv function %tmp.101 :getNewestSampleTime;
-        %tmp.103 = invoke %tmp.101 %tmp.102();
-        %tmp.104 = as %tmp.103 Toybox.Time.Moment;
-        lputv %newestTimeMoment.9 %tmp.104;
+        %tmp.107 = lgetv %sensorIter.4;
+        %tmp.108 = getv function %tmp.107 :getOldestSampleTime;
+        %tmp.109 = invoke %tmp.107 %tmp.108();
+        %tmp.110 = as %tmp.109 Toybox.Time.Moment or Null;
+        lputv %oldestTimeMoment.8 %tmp.110;
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 94 8 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_8_96_8_if_stmt:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_12_94_61_begin:
-        %tmp.106 = lgetv %oldestTimeMoment.8;
-        %tmp.107 = null;
-        %tmp.108 = eq %tmp.106 %tmp.107;
-        bt %tmp.108 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_8_96_8_if_true;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_41_94_61_false:
-        %tmp.110 = lgetv %newestTimeMoment.9;
-        %tmp.111 = null;
-        %tmp.112 = eq %tmp.110 %tmp.111;
-        push %tmp.112;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_41_94_61_end:
-        %tmp.113 = phi [%tmp.108 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_12_94_61_begin] [%tmp.112 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_41_94_61_false] [%tmp.113 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_41_94_61_end];
-        bf %tmp.113 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_8_96_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_8_96_8_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_66_96_8_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 95 12 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %newestTimeMoment.9 = local;
+        %tmp.111 = lgetv %sensorIter.4;
+        %tmp.112 = getv function %tmp.111 :getNewestSampleTime;
+        %tmp.113 = invoke %tmp.111 %tmp.112();
+        %tmp.114 = as %tmp.113 Toybox.Time.Moment or Null;
+        lputv %newestTimeMoment.9 %tmp.114;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 97 8 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_8_100_8_if_stmt:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_12_97_60_begin:
+        %tmp.116 = lgetv %oldestTimeMoment.8;
+        %tmp.117 = null;
+        %tmp.118 = eq %tmp.116 %tmp.117;
+        bt %tmp.118 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_8_100_8_if_true;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_40_97_60_false:
+        %tmp.120 = lgetv %newestTimeMoment.9;
+        %tmp.121 = null;
+        %tmp.122 = eq %tmp.120 %tmp.121;
+        push %tmp.122;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_40_97_60_end:
+        %tmp.123 = phi [%tmp.118 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_12_97_60_begin] [%tmp.122 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_40_97_60_false] [%tmp.123 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_40_97_60_end];
+        bf %tmp.123 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_8_100_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_8_100_8_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_66_100_8_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 98 12 ]
+        %tmp.124 = getm $.Toybox.System;
+        %tmp.125 = getv function %tmp.124 :println;
+        %tmp.126 = "Time moments are null";
+        invoke %tmp.124 %tmp.125(%tmp.126);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 99 12 ]
         ret ?;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_66_96_8_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_8_96_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_94_8_96_8_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 99 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %oldestTime.10 = local;
-        %tmp.114 = lgetv %oldestTimeMoment.8;
-        %tmp.115 = getv function %tmp.114 :value;
-        %tmp.116 = invoke %tmp.114 %tmp.115();
-        %tmp.117 = as %tmp.116 Lang.Number;
-        lputv %oldestTime.10 %tmp.117;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 100 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %newestTime.11 = local;
-        %tmp.118 = lgetv %newestTimeMoment.9;
-        %tmp.119 = getv function %tmp.118 :value;
-        %tmp.120 = invoke %tmp.118 %tmp.119();
-        %tmp.121 = as %tmp.120 Lang.Number;
-        lputv %newestTime.11 %tmp.121;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_66_100_8_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_8_100_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_97_8_100_8_if_end:
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 102 8 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_8_104_8_if_stmt:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_12_102_49_begin:
-        %tmp.123 = lgetv %oldestTime.10;
-        %tmp.124 = null;
-        %tmp.125 = eq %tmp.123 %tmp.124;
-        bt %tmp.125 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_8_104_8_if_true;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_35_102_49_false:
-        %tmp.127 = lgetv %newestTime.11;
-        %tmp.128 = null;
-        %tmp.129 = eq %tmp.127 %tmp.128;
-        push %tmp.129;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_35_102_49_end:
-        %tmp.130 = phi [%tmp.125 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_12_102_49_begin] [%tmp.129 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_35_102_49_false] [%tmp.130 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_35_102_49_end];
-        bf %tmp.130 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_8_104_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_8_104_8_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_54_104_8_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 103 12 ]
-        ret ?;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_54_104_8_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_8_104_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_102_8_104_8_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 106 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %totalDuration.12 = local;
-        %tmp.132 = lgetv %newestTime.11;
-        %tmp.134 = lgetv %oldestTime.10;
-        %tmp.135 = sub %tmp.132 %tmp.134;
-        lputv %totalDuration.12 %tmp.135;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 110 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %sample.13 = local;
-        %tmp.136 = lgetv %sensorIter.4;
-        %tmp.137 = getv function %tmp.136 :next;
-        %tmp.138 = invoke %tmp.136 %tmp.137();
-        lputv %sample.13 %tmp.138;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 112 8 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_8_114_8_if_stmt:
-        %tmp.140 = lgetv %sample.13;
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %oldestTime.10 = local;
+        %tmp.127 = lgetv %oldestTimeMoment.8;
+        %tmp.128 = getv function %tmp.127 :value;
+        %tmp.129 = invoke %tmp.127 %tmp.128();
+        %tmp.130 = as %tmp.129 Lang.Number or Null;
+        lputv %oldestTime.10 %tmp.130;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 103 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %newestTime.11 = local;
+        %tmp.131 = lgetv %newestTimeMoment.9;
+        %tmp.132 = getv function %tmp.131 :value;
+        %tmp.133 = invoke %tmp.131 %tmp.132();
+        %tmp.134 = as %tmp.133 Lang.Number or Null;
+        lputv %newestTime.11 %tmp.134;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 105 8 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_8_108_8_if_stmt:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_12_105_48_begin:
+        %tmp.136 = lgetv %oldestTime.10;
+        %tmp.137 = null;
+        %tmp.138 = eq %tmp.136 %tmp.137;
+        bt %tmp.138 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_8_108_8_if_true;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_34_105_48_false:
+        %tmp.140 = lgetv %newestTime.11;
         %tmp.141 = null;
         %tmp.142 = eq %tmp.140 %tmp.141;
-        bf %tmp.142 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_8_114_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_8_114_8_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_28_114_8_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 113 12 ]
+        push %tmp.142;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_34_105_48_end:
+        %tmp.143 = phi [%tmp.138 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_12_105_48_begin] [%tmp.142 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_34_105_48_false] [%tmp.143 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_34_105_48_end];
+        bf %tmp.143 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_8_108_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_8_108_8_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_54_108_8_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 106 12 ]
+        %tmp.144 = getm $.Toybox.System;
+        %tmp.145 = getv function %tmp.144 :println;
+        %tmp.146 = "Oldest or newest time is null";
+        invoke %tmp.144 %tmp.145(%tmp.146);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 107 12 ]
         ret ?;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_28_114_8_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_8_114_8_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_112_8_114_8_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 115 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %nextSample.14 = local;
-        %tmp.144 = lgetv %sample.13;
-        lputv %nextSample.14 %tmp.144;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 116 8 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop" ]
-        %nextSampleTime.15 = local;
-        %tmp.145 = lgetv %sample.13;
-        %tmp.146 = getv %tmp.145 :when;
-        %tmp.147 = getv function %tmp.146 :value;
-        %tmp.148 = invoke %tmp.146 %tmp.147();
-        %tmp.149 = as %tmp.148 Lang.Number;
-        lputv %nextSampleTime.15 %tmp.149;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_54_108_8_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_8_108_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_105_8_108_8_if_end:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 110 8 ]
+        %tmp.147 = getm $.Toybox.System;
+        %tmp.148 = getv function %tmp.147 :println;
+        %tmp.149 = "Oldest time: ";
+        %tmp.151 = lgetv %oldestTime.10;
+        %tmp.152 = add %tmp.149 %tmp.151;
+        invoke %tmp.147 %tmp.148(%tmp.152);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 111 8 ]
+        %tmp.153 = getm $.Toybox.System;
+        %tmp.154 = getv function %tmp.153 :println;
+        %tmp.155 = "Newest time: ";
+        %tmp.157 = lgetv %newestTime.11;
+        %tmp.158 = add %tmp.155 %tmp.157;
+        invoke %tmp.153 %tmp.154(%tmp.158);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 113 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %totalDuration.12 = local;
+        %tmp.160 = lgetv %newestTime.11;
+        %tmp.162 = lgetv %oldestTime.10;
+        %tmp.163 = sub %tmp.160 %tmp.162;
+        lputv %totalDuration.12 %tmp.163;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 114 8 ]
+        %tmp.164 = getm $.Toybox.System;
+        %tmp.165 = getv function %tmp.164 :println;
+        %tmp.166 = "Total duration: ";
+        %tmp.168 = lgetv %totalDuration.12;
+        %tmp.169 = add %tmp.166 %tmp.168;
+        invoke %tmp.164 %tmp.165(%tmp.169);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 117 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %sample.13 = local;
+        %tmp.170 = lgetv %sensorIter.4;
+        %tmp.171 = getv function %tmp.170 :next;
+        %tmp.172 = invoke %tmp.170 %tmp.171();
+        lputv %sample.13 %tmp.172;
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 119 8 ]
-        for @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_test @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_incr @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_init:
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_begin" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_end" ]
-        %x.16 = local;
-        %tmp.150 = 0;
-        lputv %x.16 %tmp.150;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_test:
-        %tmp.152 = lgetv %x.16;
-        %tmp.154 = lgetv %graphWidth.7;
-        %tmp.155 = lt %tmp.152 %tmp.154;
-        bf %tmp.155 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_begin:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_45_152_8_start:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_122_8_if_stmt:
+        %tmp.174 = lgetv %sample.13;
+        %tmp.175 = null;
+        %tmp.176 = eq %tmp.174 %tmp.175;
+        bf %tmp.176 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_122_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_122_8_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_28_122_8_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 120 12 ]
+        %tmp.177 = getm $.Toybox.System;
+        %tmp.178 = getv function %tmp.177 :println;
+        %tmp.179 = "No samples found";
+        invoke %tmp.177 %tmp.178(%tmp.179);
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 121 12 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_45_152_8_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_45_152_8_stop" ]
-        %targetTime.17 = local;
-        %tmp.157 = lgetv %oldestTime.10;
-        %tmp.159 = lgetv %totalDuration.12;
-        %tmp.161 = lgetv %x.16;
-        %tmp.162 = mul %tmp.159 %tmp.161;
-        %tmp.164 = lgetv %graphWidth.7;
-        %tmp.165 = div %tmp.162 %tmp.164;
-        %tmp.166 = add %tmp.157 %tmp.165;
-        lputv %targetTime.17 %tmp.166;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 124 12 ]
-        while @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_test @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_test:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_19_124_62_begin:
-        %tmp.168 = lgetv %nextSampleTime.15;
-        %tmp.169 = null;
-        %tmp.170 = ne %tmp.168 %tmp.169;
-        %tmp.171 = dup %tmp.170;
-        bf %tmp.171 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_45_124_62_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_45_124_62_true:
-        %tmp.173 = lgetv %nextSampleTime.15;
-        %tmp.174 = as %tmp.173 { (!Null) };
-        %tmp.176 = lgetv %targetTime.17;
-        %tmp.177 = lt %tmp.174 %tmp.176;
-        %tmp.178 = and %tmp.170 %tmp.177;
-        push %tmp.178;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_45_124_62_end:
-        %tmp.179 = phi [%tmp.171 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_19_124_62_begin] [%tmp.178 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_45_124_62_true] [%tmp.179 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_45_124_62_end];
-        bf %tmp.179 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_begin:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_74_128_12_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 125 16 ]
-        %tmp.181 = lgetv %nextSample.14;
-        lputv %sample.13 %tmp.181;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 126 16 ]
-        %tmp.182 = lgetv %sensorIter.4;
-        %tmp.183 = getv function %tmp.182 :next;
-        %tmp.184 = invoke %tmp.182 %tmp.183();
-        lputv %nextSample.14 %tmp.184;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 127 16 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_begin:
-        %tmp.186 = lgetv %nextSample.14;
-        %tmp.187 = null;
-        %tmp.188 = ne %tmp.186 %tmp.187;
-        bf %tmp.188 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_false;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_true:
-        %tmp.189 = lgetv %nextSample.14;
-        %tmp.190 = as %tmp.189 { (!Null) };
-        %tmp.191 = getv %tmp.190 :when;
-        %tmp.192 = getv function %tmp.191 :value;
-        %tmp.193 = invoke %tmp.191 %tmp.192();
-        push %tmp.193;
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_false:
-        %tmp.194 = null;
-        push %tmp.194;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_end:
-        %tmp.195 = phi [%tmp.188 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_begin] [%tmp.193 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_true] [%tmp.194 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_false] [%tmp.195 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_127_33_127_82_end];
-        lputv %nextSampleTime.15 %tmp.195;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_74_128_12_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_test;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_124_12_128_12_while_end:
+        ret ?;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_28_122_8_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_122_8_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_122_8_if_end:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 124 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %nextSample.14 = local;
+        %tmp.181 = lgetv %sample.13;
+        lputv %nextSample.14 %tmp.181;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 125 8 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop" ]
+        %nextSampleTime.15 = local;
+        %tmp.182 = lgetv %sample.13;
+        %tmp.183 = getv %tmp.182 :when;
+        %tmp.184 = getv function %tmp.183 :value;
+        %tmp.185 = invoke %tmp.183 %tmp.184();
+        %tmp.186 = as %tmp.185 Lang.Number or Null;
+        lputv %nextSampleTime.15 %tmp.186;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 127 8 ]
+        %tmp.187 = getm $.Toybox.System;
+        %tmp.188 = getv function %tmp.187 :println;
+        %tmp.189 = "Starting graph drawing loop";
+        invoke %tmp.187 %tmp.188(%tmp.189);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 128 8 ]
+        for @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_test @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_incr @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_init:
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_begin" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_end" ]
+        %x.16 = local;
+        %tmp.190 = 0;
+        lputv %x.16 %tmp.190;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_test:
+        %tmp.192 = lgetv %x.16;
+        %tmp.194 = lgetv %graphWidth.7;
+        %tmp.195 = lt %tmp.192 %tmp.194;
+        bf %tmp.195 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_begin:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_45_160_8_start:
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 130 12 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_12_151_12_if_stmt:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_16_130_49_begin:
-        %tmp.197 = lgetv %sample.13;
-        %tmp.198 = null;
-        %tmp.199 = ne %tmp.197 %tmp.198;
-        bf %tmp.199 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_12_151_12_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_34_130_49_true:
-        %tmp.200 = lgetv %sample.13;
-        %tmp.201 = as %tmp.200 { (!Null) };
-        %tmp.202 = getv %tmp.201 :data;
-        %tmp.203 = null;
-        %tmp.204 = ne %tmp.202 %tmp.203;
-        push %tmp.204;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_34_130_49_end:
-        %tmp.205 = phi [%tmp.199 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_16_130_49_begin] [%tmp.204 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_34_130_49_true] [%tmp.205 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_34_130_49_end];
-        bf %tmp.205 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_12_151_12_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_12_151_12_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_55_151_12_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 131 16 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_55_151_12_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_55_151_12_stop" ]
-        %heartRate.18 = local;
-        %tmp.206 = lgetv %sample.13;
-        %tmp.207 = as %tmp.206 { (!Null) };
-        %tmp.208 = getv %tmp.207 :data;
-        lputv %heartRate.18 %tmp.208;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 133 16 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_55_151_12_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_55_151_12_stop" ]
-        %y.19 = local;
-        %tmp.210 = lgetv %graphBottom.5;
-        %tmp.211 = 1.0;
-        %tmp.212 = mul %tmp.210 %tmp.211;
-        %tmp.214 = lgetv %heartRate.18;
-        %tmp.215 = 1.0;
-        %tmp.216 = mul %tmp.214 %tmp.215;
-        %tmp.218 = getv ? :_heartRateZones;
-        %tmp.219 = 5;
-        %tmp.220 = agetv %tmp.218 %tmp.219;
-        %tmp.221 = div %tmp.216 %tmp.220;
-        %tmp.222 = 1.0;
-        %tmp.223 = mul %tmp.221 %tmp.222;
-        %tmp.225 = lgetv %graphHeight.6;
-        %tmp.226 = mul %tmp.223 %tmp.225;
-        %tmp.227 = sub %tmp.212 %tmp.226;
-        lputv %y.19 %tmp.227;
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_45_160_8_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_45_160_8_stop" ]
+        %targetTime.17 = local;
+        %tmp.197 = lgetv %oldestTime.10;
+        %tmp.199 = lgetv %totalDuration.12;
+        %tmp.201 = lgetv %x.16;
+        %tmp.202 = mul %tmp.199 %tmp.201;
+        %tmp.204 = lgetv %graphWidth.7;
+        %tmp.205 = div %tmp.202 %tmp.204;
+        %tmp.206 = add %tmp.197 %tmp.205;
+        lputv %targetTime.17 %tmp.206;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 133 12 ]
+        while @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_test @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_test:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_19_133_62_begin:
+        %tmp.208 = lgetv %nextSampleTime.15;
+        %tmp.209 = null;
+        %tmp.210 = ne %tmp.208 %tmp.209;
+        %tmp.211 = dup %tmp.210;
+        bf %tmp.211 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_45_133_62_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_45_133_62_true:
+        %tmp.213 = lgetv %nextSampleTime.15;
+        %tmp.214 = as %tmp.213 { (!Null) };
+        %tmp.216 = lgetv %targetTime.17;
+        %tmp.217 = lt %tmp.214 %tmp.216;
+        %tmp.218 = and %tmp.210 %tmp.217;
+        push %tmp.218;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_45_133_62_end:
+        %tmp.219 = phi [%tmp.211 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_19_133_62_begin] [%tmp.218 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_45_133_62_true] [%tmp.219 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_45_133_62_end];
+        bf %tmp.219 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_begin:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_74_137_12_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 134 16 ]
+        %tmp.221 = lgetv %nextSample.14;
+        lputv %sample.13 %tmp.221;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 135 16 ]
+        %tmp.222 = lgetv %sensorIter.4;
+        %tmp.223 = getv function %tmp.222 :next;
+        %tmp.224 = invoke %tmp.222 %tmp.223();
+        lputv %nextSample.14 %tmp.224;
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 136 16 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_16_148_16_if_stmt:
-        %tmp.229 = lgetv %heartRate.18;
-        %tmp.231 = getv ? :_heartRateZones;
-        %tmp.232 = 0;
-        %tmp.233 = agetv %tmp.231 %tmp.232;
-        %tmp.234 = lt %tmp.229 %tmp.233;
-        bf %tmp.234 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_16_148_16_if_false;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_16_148_16_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_52_138_16_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 137 20 ]
-        %tmp.235 = lgetv %dc;
-        %tmp.236 = getv function %tmp.235 :setColor;
-        %tmp.237 = getm $.Toybox.Graphics;
-        %tmp.238 = getv %tmp.237 :COLOR_WHITE;
-        %tmp.239 = getm $.Toybox.Graphics;
-        %tmp.240 = getv %tmp.239 :COLOR_WHITE;
-        invoke %tmp.235 %tmp.236(%tmp.238, %tmp.240);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_52_138_16_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_16_148_16_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_16_148_16_if_false:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 138 23 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_23_148_16_if_stmt:
-        %tmp.242 = lgetv %heartRate.18;
-        %tmp.244 = getv ? :_heartRateZones;
-        %tmp.245 = 1;
-        %tmp.246 = agetv %tmp.244 %tmp.245;
-        %tmp.247 = lte %tmp.242 %tmp.246;
-        bf %tmp.247 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_23_148_16_if_false;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_23_148_16_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_60_140_16_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 139 20 ]
-        %tmp.248 = lgetv %dc;
-        %tmp.249 = getv function %tmp.248 :setColor;
-        %tmp.250 = getm $.Toybox.Graphics;
-        %tmp.251 = getv %tmp.250 :COLOR_LT_GRAY;
-        %tmp.252 = getm $.Toybox.Graphics;
-        %tmp.253 = getv %tmp.252 :COLOR_LT_GRAY;
-        invoke %tmp.248 %tmp.249(%tmp.251, %tmp.253);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_60_140_16_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_23_148_16_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_23_148_16_if_false:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 140 23 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_23_148_16_if_stmt:
-        %tmp.255 = lgetv %heartRate.18;
-        %tmp.257 = getv ? :_heartRateZones;
-        %tmp.258 = 2;
-        %tmp.259 = agetv %tmp.257 %tmp.258;
-        %tmp.260 = lte %tmp.255 %tmp.259;
-        bf %tmp.260 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_23_148_16_if_false;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_23_148_16_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_60_142_16_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 141 20 ]
-        %tmp.261 = lgetv %dc;
-        %tmp.262 = getv function %tmp.261 :setColor;
-        %tmp.263 = getm $.Toybox.Graphics;
-        %tmp.264 = getv %tmp.263 :COLOR_BLUE;
-        %tmp.265 = getm $.Toybox.Graphics;
-        %tmp.266 = getv %tmp.265 :COLOR_BLUE;
-        invoke %tmp.261 %tmp.262(%tmp.264, %tmp.266);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_60_142_16_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_23_148_16_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_23_148_16_if_false:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 142 23 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_23_148_16_if_stmt:
-        %tmp.268 = lgetv %heartRate.18;
-        %tmp.270 = getv ? :_heartRateZones;
-        %tmp.271 = 3;
-        %tmp.272 = agetv %tmp.270 %tmp.271;
-        %tmp.273 = lte %tmp.268 %tmp.272;
-        bf %tmp.273 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_23_148_16_if_false;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_23_148_16_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_60_144_16_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 143 20 ]
-        %tmp.274 = lgetv %dc;
-        %tmp.275 = getv function %tmp.274 :setColor;
-        %tmp.276 = getm $.Toybox.Graphics;
-        %tmp.277 = getv %tmp.276 :COLOR_GREEN;
-        %tmp.278 = getm $.Toybox.Graphics;
-        %tmp.279 = getv %tmp.278 :COLOR_GREEN;
-        invoke %tmp.274 %tmp.275(%tmp.277, %tmp.279);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_60_144_16_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_23_148_16_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_23_148_16_if_false:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 144 23 ]
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_23_148_16_if_stmt:
-        %tmp.281 = lgetv %heartRate.18;
-        %tmp.283 = getv ? :_heartRateZones;
-        %tmp.284 = 4;
-        %tmp.285 = agetv %tmp.283 %tmp.284;
-        %tmp.286 = lte %tmp.281 %tmp.285;
-        bf %tmp.286 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_23_148_16_if_false;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_23_148_16_if_true:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_60_146_16_start:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_begin:
+        %tmp.226 = lgetv %nextSample.14;
+        %tmp.227 = null;
+        %tmp.228 = ne %tmp.226 %tmp.227;
+        bf %tmp.228 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_false;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_true:
+        %tmp.229 = lgetv %nextSample.14;
+        %tmp.230 = as %tmp.229 { (!Null) };
+        %tmp.231 = getv %tmp.230 :when;
+        %tmp.232 = getv function %tmp.231 :value;
+        %tmp.233 = invoke %tmp.231 %tmp.232();
+        push %tmp.233;
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_false:
+        %tmp.234 = null;
+        push %tmp.234;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_end:
+        %tmp.235 = phi [%tmp.228 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_begin] [%tmp.233 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_true] [%tmp.234 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_false] [%tmp.235 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_33_136_82_end];
+        lputv %nextSampleTime.15 %tmp.235;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_74_137_12_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_test;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_133_12_137_12_while_end:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 139 12 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_12_159_12_if_stmt:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_16_139_49_begin:
+        %tmp.237 = lgetv %sample.13;
+        %tmp.238 = null;
+        %tmp.239 = ne %tmp.237 %tmp.238;
+        bf %tmp.239 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_12_159_12_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_34_139_49_true:
+        %tmp.240 = lgetv %sample.13;
+        %tmp.241 = as %tmp.240 { (!Null) };
+        %tmp.242 = getv %tmp.241 :data;
+        %tmp.243 = null;
+        %tmp.244 = ne %tmp.242 %tmp.243;
+        push %tmp.244;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_34_139_49_end:
+        %tmp.245 = phi [%tmp.239 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_16_139_49_begin] [%tmp.244 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_34_139_49_true] [%tmp.245 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_34_139_49_end];
+        bf %tmp.245 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_12_159_12_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_12_159_12_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_55_159_12_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 140 16 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_55_159_12_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_55_159_12_stop" ]
+        %heartRate.18 = local;
+        %tmp.246 = lgetv %sample.13;
+        %tmp.247 = as %tmp.246 { (!Null) };
+        %tmp.248 = getv %tmp.247 :data;
+        lputv %heartRate.18 %tmp.248;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 141 16 ]
+        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_55_159_12_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_55_159_12_stop" ]
+        %y.19 = local;
+        %tmp.250 = lgetv %graphBottom.5;
+        %tmp.251 = 1.0;
+        %tmp.252 = mul %tmp.250 %tmp.251;
+        %tmp.254 = lgetv %heartRate.18;
+        %tmp.255 = 1.0;
+        %tmp.256 = mul %tmp.254 %tmp.255;
+        %tmp.258 = getv ? :_heartRateZones;
+        %tmp.259 = 5;
+        %tmp.260 = agetv %tmp.258 %tmp.259;
+        %tmp.261 = div %tmp.256 %tmp.260;
+        %tmp.262 = 1.0;
+        %tmp.263 = mul %tmp.261 %tmp.262;
+        %tmp.265 = lgetv %graphHeight.6;
+        %tmp.266 = mul %tmp.263 %tmp.265;
+        %tmp.267 = sub %tmp.252 %tmp.266;
+        lputv %y.19 %tmp.267;
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 144 16 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_16_156_16_if_stmt:
+        %tmp.269 = lgetv %heartRate.18;
+        %tmp.271 = getv ? :_heartRateZones;
+        %tmp.272 = 0;
+        %tmp.273 = agetv %tmp.271 %tmp.272;
+        %tmp.274 = lt %tmp.269 %tmp.273;
+        bf %tmp.274 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_16_156_16_if_false;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_16_156_16_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_52_146_16_start:
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 145 20 ]
-        %tmp.287 = lgetv %dc;
-        %tmp.288 = getv function %tmp.287 :setColor;
-        %tmp.289 = getm $.Toybox.Graphics;
-        %tmp.290 = getv %tmp.289 :COLOR_ORANGE;
-        %tmp.291 = getm $.Toybox.Graphics;
-        %tmp.292 = getv %tmp.291 :COLOR_ORANGE;
-        invoke %tmp.287 %tmp.288(%tmp.290, %tmp.292);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_60_146_16_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_23_148_16_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_23_148_16_if_false:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_148_16_start:
+        %tmp.275 = lgetv %dc;
+        %tmp.276 = getv function %tmp.275 :setColor;
+        %tmp.277 = getm $.Toybox.Graphics;
+        %tmp.278 = getv %tmp.277 :COLOR_WHITE;
+        %tmp.279 = getm $.Toybox.Graphics;
+        %tmp.280 = getv %tmp.279 :COLOR_WHITE;
+        invoke %tmp.275 %tmp.276(%tmp.278, %tmp.280);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_52_146_16_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_16_156_16_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_16_156_16_if_false:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 146 23 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_156_16_if_stmt:
+        %tmp.282 = lgetv %heartRate.18;
+        %tmp.284 = getv ? :_heartRateZones;
+        %tmp.285 = 1;
+        %tmp.286 = agetv %tmp.284 %tmp.285;
+        %tmp.287 = lte %tmp.282 %tmp.286;
+        bf %tmp.287 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_156_16_if_false;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_156_16_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_60_148_16_start:
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 147 20 ]
-        %tmp.293 = lgetv %dc;
-        %tmp.294 = getv function %tmp.293 :setColor;
-        %tmp.295 = getm $.Toybox.Graphics;
-        %tmp.296 = getv %tmp.295 :COLOR_RED;
-        %tmp.297 = getm $.Toybox.Graphics;
-        %tmp.298 = getv %tmp.297 :COLOR_RED;
-        invoke %tmp.293 %tmp.294(%tmp.296, %tmp.298);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_148_16_stop:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_23_148_16_if_end:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_142_23_148_16_if_end:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_140_23_148_16_if_end:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_138_23_148_16_if_end:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_136_16_148_16_if_end:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 150 16 ]
-        %tmp.299 = lgetv %dc;
-        %tmp.300 = getv function %tmp.299 :drawLine;
-        %tmp.302 = lgetv %x.16;
-        %tmp.304 = lgetv %graphBottom.5;
-        %tmp.306 = lgetv %x.16;
-        %tmp.308 = lgetv %y.19;
-        invoke %tmp.299 %tmp.300(%tmp.302, %tmp.304, %tmp.306, %tmp.308);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_55_151_12_stop:
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_12_151_12_if_end;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_130_12_151_12_if_end:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_45_152_8_stop:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_incr:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 119 ]
-        %tmp.311 = lgetv %x.16;
-        %tmp.312 = add %tmp.311 1;
-        lputv %x.16 %tmp.312;
-        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_test;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_119_8_152_8_for_end:
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_55_47_153_4_stop:
+        %tmp.288 = lgetv %dc;
+        %tmp.289 = getv function %tmp.288 :setColor;
+        %tmp.290 = getm $.Toybox.Graphics;
+        %tmp.291 = getv %tmp.290 :COLOR_LT_GRAY;
+        %tmp.292 = getm $.Toybox.Graphics;
+        %tmp.293 = getv %tmp.292 :COLOR_LT_GRAY;
+        invoke %tmp.288 %tmp.289(%tmp.291, %tmp.293);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_60_148_16_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_156_16_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_156_16_if_false:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 148 23 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_23_156_16_if_stmt:
+        %tmp.295 = lgetv %heartRate.18;
+        %tmp.297 = getv ? :_heartRateZones;
+        %tmp.298 = 2;
+        %tmp.299 = agetv %tmp.297 %tmp.298;
+        %tmp.300 = lte %tmp.295 %tmp.299;
+        bf %tmp.300 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_23_156_16_if_false;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_23_156_16_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_60_150_16_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 149 20 ]
+        %tmp.301 = lgetv %dc;
+        %tmp.302 = getv function %tmp.301 :setColor;
+        %tmp.303 = getm $.Toybox.Graphics;
+        %tmp.304 = getv %tmp.303 :COLOR_BLUE;
+        %tmp.305 = getm $.Toybox.Graphics;
+        %tmp.306 = getv %tmp.305 :COLOR_BLUE;
+        invoke %tmp.301 %tmp.302(%tmp.304, %tmp.306);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_60_150_16_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_23_156_16_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_23_156_16_if_false:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 150 23 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_23_156_16_if_stmt:
+        %tmp.308 = lgetv %heartRate.18;
+        %tmp.310 = getv ? :_heartRateZones;
+        %tmp.311 = 3;
+        %tmp.312 = agetv %tmp.310 %tmp.311;
+        %tmp.313 = lte %tmp.308 %tmp.312;
+        bf %tmp.313 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_23_156_16_if_false;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_23_156_16_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_60_152_16_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 151 20 ]
+        %tmp.314 = lgetv %dc;
+        %tmp.315 = getv function %tmp.314 :setColor;
+        %tmp.316 = getm $.Toybox.Graphics;
+        %tmp.317 = getv %tmp.316 :COLOR_GREEN;
+        %tmp.318 = getm $.Toybox.Graphics;
+        %tmp.319 = getv %tmp.318 :COLOR_GREEN;
+        invoke %tmp.314 %tmp.315(%tmp.317, %tmp.319);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_60_152_16_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_23_156_16_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_23_156_16_if_false:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 152 23 ]
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_23_156_16_if_stmt:
+        %tmp.321 = lgetv %heartRate.18;
+        %tmp.323 = getv ? :_heartRateZones;
+        %tmp.324 = 4;
+        %tmp.325 = agetv %tmp.323 %tmp.324;
+        %tmp.326 = lte %tmp.321 %tmp.325;
+        bf %tmp.326 @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_23_156_16_if_false;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_23_156_16_if_true:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_60_154_16_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 153 20 ]
+        %tmp.327 = lgetv %dc;
+        %tmp.328 = getv function %tmp.327 :setColor;
+        %tmp.329 = getm $.Toybox.Graphics;
+        %tmp.330 = getv %tmp.329 :COLOR_ORANGE;
+        %tmp.331 = getm $.Toybox.Graphics;
+        %tmp.332 = getv %tmp.331 :COLOR_ORANGE;
+        invoke %tmp.327 %tmp.328(%tmp.330, %tmp.332);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_60_154_16_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_23_156_16_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_23_156_16_if_false:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_154_23_156_16_start:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 155 20 ]
+        %tmp.333 = lgetv %dc;
+        %tmp.334 = getv function %tmp.333 :setColor;
+        %tmp.335 = getm $.Toybox.Graphics;
+        %tmp.336 = getv %tmp.335 :COLOR_RED;
+        %tmp.337 = getm $.Toybox.Graphics;
+        %tmp.338 = getv %tmp.337 :COLOR_RED;
+        invoke %tmp.333 %tmp.334(%tmp.336, %tmp.338);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_154_23_156_16_stop:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_152_23_156_16_if_end:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_150_23_156_16_if_end:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_148_23_156_16_if_end:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_146_23_156_16_if_end:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_144_16_156_16_if_end:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 157 16 ]
+        %tmp.339 = getm $.Toybox.System;
+        %tmp.340 = getv function %tmp.339 :println;
+        %tmp.341 = "Drawing heart rate at x=";
+        %tmp.343 = lgetv %x.16;
+        %tmp.344 = add %tmp.341 %tmp.343;
+        %tmp.345 = ", y=";
+        %tmp.346 = add %tmp.344 %tmp.345;
+        %tmp.348 = lgetv %y.19;
+        %tmp.349 = add %tmp.346 %tmp.348;
+        invoke %tmp.339 %tmp.340(%tmp.349);
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 158 16 ]
+        %tmp.350 = lgetv %dc;
+        %tmp.351 = getv function %tmp.350 :drawLine;
+        %tmp.353 = lgetv %x.16;
+        %tmp.355 = lgetv %graphBottom.5;
+        %tmp.357 = lgetv %x.16;
+        %tmp.359 = lgetv %y.19;
+        invoke %tmp.350 %tmp.351(%tmp.353, %tmp.355, %tmp.357, %tmp.359);
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_55_159_12_stop:
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_12_159_12_if_end;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_139_12_159_12_if_end:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_45_160_8_stop:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_incr:
+[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc" 128 ]
+        %tmp.362 = lgetv %x.16;
+        %tmp.363 = add %tmp.362 1;
+        lputv %x.16 %tmp.363;
+        goto @D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_test;
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_128_8_160_8_for_end:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireView_mc_60_47_161_4_stop:
     }
 }
 [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireView.mc"; @line = 1; ]

@@ -6,64 +6,66 @@ import Toybox.WatchUi;
 import Toybox.UserProfile;
 
 //! Display graph of heart rate history
-//! Display graph of heart rate history
 class HeartRateHistoryView extends WatchUi.View {
 
     //! Instance variable to store heart rate zones and font
-    private var _heartRateZones as Lang.Array;
-    private var _bigNumProtomolecule;
-    private var _width, _height as Lang.Number;
+    private var _heartRateZones as Lang.Array or Null;
+    private var _bigNumProtomolecule as Toybox.WatchUi.FontResource or Null;
+    private var _width, _height as Lang.Number or Null;
 
     //! Constructor
     public function initialize() {
         View.initialize();
 
+        System.println("Initializing HeartRateHistoryView");
+
         // Determine and store HRZones once
         _heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
+        System.println("Heart rate zones: " + _heartRateZones.toString());
 
         // Init the correct font        
         _bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont);
+        System.println("Font loaded: " + _bigNumProtomolecule);
 
         // Dummy Values, will be overwritten on onLayout
         _width = 50;
         _height = 50;
-
     }
 
     //! Get the heart rate iterator
     //! @return The heart rate iterator
     private function getHeartRateIterator() as SensorHistoryIterator? {
+        System.println("Getting heart rate iterator");
         if (Toybox has :SensorHistory && SensorHistory has :getHeartRateHistory) {
             var getMethod = new Lang.Method(SensorHistory, :getHeartRateHistory);
             var sixHours = new Time.Duration(21600);  // Six hours in seconds
+            System.println("Invoking getHeartRateHistory method");
             return getMethod.invoke({:period => sixHours, :order => SensorHistory.ORDER_OLDEST_FIRST}) as SensorHistoryIterator;
         }
         return null;
     }
 
     public function onShow() as Void {
-        
+        System.println("HeartRateHistoryView shown");
     }
 
     function onLayout(dc) {
-        _width=dc.getWidth();
-        _height=dc.getHeight();
-     }
+        _width = dc.getWidth();
+        _height = dc.getHeight();
+        System.println("Layout dimensions: width=" + _width + ", height=" + _height);
+    }
 
     //! Update the view
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
-        // dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
-        // dc.clear();
+        System.println("Updating view");
+
+        // Draw Background and clear device context
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        dc.clear();
 
         // Get and show the current time
         var clockTime = System.getClockTime();
-        
-        // nullcheck clockTime
-        if (clockTime == null){
-            return;
-        }
-
         var timeStringHH = Lang.format("$1$", [clockTime.hour.format("%02d")]);
         var timeStringMM = Lang.format("$1$", [clockTime.min.format("%02d")]);
 
@@ -79,6 +81,7 @@ class HeartRateHistoryView extends WatchUi.View {
 
         // Nullcheck the sensorIterator
         if (sensorIter == null) {
+            System.println("No heart rate data available");
             return;
         }
 
@@ -87,35 +90,41 @@ class HeartRateHistoryView extends WatchUi.View {
         var graphWidth = _width;
 
         // Determine the total time span in the data
-        var oldestTimeMoment = sensorIter.getOldestSampleTime() as Toybox.Time.Moment;
-        var newestTimeMoment = sensorIter.getNewestSampleTime() as Toybox.Time.Moment;
+        var oldestTimeMoment = sensorIter.getOldestSampleTime() as Toybox.Time.Moment or Null;
+        var newestTimeMoment = sensorIter.getNewestSampleTime() as Toybox.Time.Moment or Null;
 
-        // nullcheck the TimeMoments
-        if (oldestTimeMoment == null ||  newestTimeMoment == null){
+        // Nullcheck the TimeMoments
+        if (oldestTimeMoment == null || newestTimeMoment == null) {
+            System.println("Time moments are null");
             return;
         }
 
+        var oldestTime = oldestTimeMoment.value() as Lang.Number or Null;
+        var newestTime = newestTimeMoment.value() as Lang.Number or Null;
 
-        var oldestTime = oldestTimeMoment.value() as Lang.Number;
-        var newestTime = newestTimeMoment.value() as Lang.Number;
-
-        if (oldestTime == null ||  newestTime == null){
+        if (oldestTime == null || newestTime == null) {
+            System.println("Oldest or newest time is null");
             return;
         }
+
+        System.println("Oldest time: " + oldestTime);
+        System.println("Newest time: " + newestTime);
 
         var totalDuration = newestTime - oldestTime;
-        
+        System.println("Total duration: " + totalDuration);
 
-        // Getting thenext sample
+        // Getting the next sample
         var sample = sensorIter.next();
         // Nullchecking the next sample
         if (sample == null) {
+            System.println("No samples found");
             return;
-        } 
+        }
+        
         var nextSample = sample;
-        var nextSampleTime = sample.when.value() as Lang.Number;
+        var nextSampleTime = sample.when.value() as Lang.Number or Null;
 
-
+        System.println("Starting graph drawing loop");
         for (var x = 0; x < graphWidth; x++) {
             // Calculate the target time for this x position
             var targetTime = oldestTime + (totalDuration * x / graphWidth);
@@ -129,7 +138,6 @@ class HeartRateHistoryView extends WatchUi.View {
 
             if (sample != null && sample.data != null) {
                 var heartRate = sample.data;
-                                    
                 var y = graphBottom*1.0 - (heartRate*1.0 / _heartRateZones[5]*1.0) * graphHeight;
 
                 // Color it, depending on the HR Zones, currently set for Running
@@ -146,10 +154,9 @@ class HeartRateHistoryView extends WatchUi.View {
                 } else {
                     dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
                 }
-
+                System.println("Drawing heart rate at x=" + x + ", y=" + y);
                 dc.drawLine(x, graphBottom, x, y);
             }
         }
     }
 }
-
