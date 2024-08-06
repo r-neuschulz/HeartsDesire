@@ -25,11 +25,14 @@ class HeartRateHistoryView extends WatchUi.View {
 
         // Init the correct font        
         _bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont);
-        System.println("Font loaded: " + _bigNumProtomolecule);
+        System.println("Font loaded: " + _bigNumProtomolecule); // I get until here, according to log.
 
         // Dummy Values, will be overwritten on onLayout
         _width = 50;
         _height = 50;
+
+        System.println("Dummy width and height loaded: w = " + _width + ", h = " + _height);  
+        System.println("Constructor finished");
     }
 
     //! Get the heart rate iterator
@@ -49,10 +52,13 @@ class HeartRateHistoryView extends WatchUi.View {
         System.println("HeartRateHistoryView shown");
     }
 
-    function onLayout(dc) {
+    public function onLayout(dc) {
+        System.println("onLayout started");
+
         _width = dc.getWidth();
         _height = dc.getHeight();
-        System.println("Layout dimensions: width=" + _width + ", height=" + _height);
+
+        System.println("Screen dimensions: width=" + _width + ", height=" + _height);
     }
 
     //! Update the view
@@ -154,7 +160,12 @@ class HeartRateHistoryView extends WatchUi.View {
                 } else {
                     dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
                 }
-                System.println("Drawing heart rate at x=" + x + ", y=" + y);
+
+                //Printing one element of the loop here
+                if (x == 0){
+                    System.println("Drawing heart rate at x=" + x + ", y=" + y);
+                }
+
                 dc.drawLine(x, graphBottom, x, y);
             }
         }
