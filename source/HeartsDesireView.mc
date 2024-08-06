@@ -9,19 +9,19 @@ import Toybox.UserProfile;
 //! Display graph of heart rate history
 class HeartRateHistoryView extends WatchUi.View {
 
-    //! Instance variable to store heart rate zones
-    private var heartRateZones as Lang.Array;
-    private var bigNumProtomolecule;
+    //! Instance variable to store heart rate zones and font
+    private var _heartRateZones as Lang.Array;
+    private var _bigNumProtomolecule;
 
     //! Constructor
     public function initialize() {
         View.initialize();
 
         // Determine and store HRZones once
-        heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
+        _heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
 
         // Init the correct font        
-        bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont); 
+        _bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont); 
     }
 
     //! Get the heart rate iterator
@@ -48,11 +48,11 @@ class HeartRateHistoryView extends WatchUi.View {
 
         // Draw HH part
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.28, bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.28, _bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         // Draw MM part
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.60, bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.60, _bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         var sensorIter = getHeartRateIterator();
         if (sensorIter != null) {
@@ -83,18 +83,18 @@ class HeartRateHistoryView extends WatchUi.View {
                 if (sample != null && sample.data != null) {
                     var heartRate = sample.data;
                                       
-                    var y = graphBottom*1.0 - (heartRate*1.0 / heartRateZones[5]*1.0) * graphHeight;
+                    var y = graphBottom*1.0 - (heartRate*1.0 / _heartRateZones[5]*1.0) * graphHeight;
 
                     // Color it, depending on the HR Zones, currently set for Running
-                    if (heartRate < heartRateZones[0]) {
+                    if (heartRate < _heartRateZones[0]) {
                         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-                    } else if (heartRate <= heartRateZones[1]) {
+                    } else if (heartRate <= _heartRateZones[1]) {
                         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
-                    } else if (heartRate <= heartRateZones[2]) {
+                    } else if (heartRate <= _heartRateZones[2]) {
                         dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
-                    } else if (heartRate <= heartRateZones[3]) {
+                    } else if (heartRate <= _heartRateZones[3]) {
                         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
-                    } else if (heartRate <= heartRateZones[4]) {
+                    } else if (heartRate <= _heartRateZones[4]) {
                         dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_ORANGE);
                     } else {
                         dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);

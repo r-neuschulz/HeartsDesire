@@ -78,9 +78,11 @@
 <entry id="8388648" module="true" symbol="WatchUi"/>
 <entry id="2" module="true" symbol="globals/Rez"/>
 <entry id="8389124" method="true" symbol="onUpdate"/>
+<entry field="true" id="9" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;_heartRateZones&gt;"/>
 <entry id="8388771" module="true" object="true" symbol="Drawables"/>
 <entry id="8389275" method="true" symbol="getApp"/>
-<entry id="9" method="true" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry field="true" id="8" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;_bigNumProtomolecule&gt;"/>
+<entry id="10" method="true" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
 <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
 <entry id="8389809" symbol="order"/>
 <entry id="8388644" module="true" symbol="System"/>
@@ -92,7 +94,6 @@
 <entry id="8388770" module="true" object="true" symbol="Strings"/>
 <entry id="8388702" method="true" symbol="initialize"/>
 <entry id="8389279" method="true" symbol="onStart"/>
-<entry field="true" id="10" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;heartRateZones&gt;"/>
 <entry id="8389808" symbol="period"/>
 <entry id="6" object="true" symbol="HeartRateHistoryView"/>
 <entry id="8389280" method="true" symbol="getInitialView"/>
@@ -102,7 +103,6 @@
 <entry id="7" object="true" symbol="HeartsDesireApp"/>
 <entry id="8388635" module="true" symbol="Application"/>
 <entry field="true" id="12" symbol="protomoleculefont"/>
-<entry field="true" id="8" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;bigNumProtomolecule&gt;"/>
 </symbolTable>
 <localVars>
 <entry endPc="268435777" name="getMethod" stackId="1" startPc="268435684"/>
