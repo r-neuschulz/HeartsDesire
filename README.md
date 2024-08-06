@@ -11,16 +11,16 @@ I always been a big fan of how the Vivoactive HR displayed its heartrate graph. 
 ## Features
 <!-- List the key features of the watchface. -->
 
-- Show the time (duh)
+- Show the time
 - Show 4-6 h of HR history on the main page
-- (todo: Show the current HR)
-- (todo: Switch between multiple color schemes)
+- (todo: Show the current HR on colored background)
+- (todo: Switch between multiple color schemes, Garmin, Magma, Viridis, and Greyscale)
 
 ## Installation Instructions
 <!-- Provide step-by-step instructions on how to install the watchface on a Garmin device. -->
 Do one of the following: 
 
-- Download from the Garmin IQ Store, you're ready to go
+- (todo: Download from the Garmin IQ Store, you're ready to go)
 - Download the .prg file from this repo, and put it via USB on the root of your device
 
 ## Customization
