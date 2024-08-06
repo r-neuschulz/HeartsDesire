@@ -12,6 +12,7 @@ class HeartRateHistoryView extends WatchUi.View {
     //! Instance variable to store heart rate zones and font
     private var _heartRateZones as Lang.Array;
     private var _bigNumProtomolecule;
+    private var _width, _height as Lang.Number;
 
     //! Constructor
     public function initialize() {
@@ -21,7 +22,12 @@ class HeartRateHistoryView extends WatchUi.View {
         _heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
 
         // Init the correct font        
-        _bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont); 
+        _bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont);
+
+        // Dummy Values, will be overwritten on onLayout
+        _width = 50;
+        _height = 50;
+
     }
 
     //! Get the heart rate iterator
@@ -35,74 +41,115 @@ class HeartRateHistoryView extends WatchUi.View {
         return null;
     }
 
+    public function onShow() as Void {
+        
+    }
+
+    function onLayout(dc) {
+        _width=dc.getWidth();
+        _height=dc.getHeight();
+     }
+
     //! Update the view
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
-        dc.clear();
+        // dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        // dc.clear();
 
         // Get and show the current time
         var clockTime = System.getClockTime();
+        
+        // nullcheck clockTime
+        if (clockTime == null){
+            return;
+        }
+
         var timeStringHH = Lang.format("$1$", [clockTime.hour.format("%02d")]);
         var timeStringMM = Lang.format("$1$", [clockTime.min.format("%02d")]);
 
         // Draw HH part
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.28, _bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(_width / 2, _height * 0.28, _bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         // Draw MM part
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() * 0.60, _bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(_width / 2, _height * 0.60, _bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         var sensorIter = getHeartRateIterator();
-        if (sensorIter != null) {
-            var graphBottom = dc.getHeight();
-            var graphHeight = dc.getHeight() * 0.40;
-            var graphWidth = dc.getWidth();
 
-            // Determine the total time span in the data
-            var oldestTime = sensorIter.getOldestSampleTime().value();
-            var newestTime = sensorIter.getNewestSampleTime().value();
-            var totalDuration = newestTime - oldestTime;
+        // Nullcheck the sensorIterator
+        if (sensorIter == null) {
+            return;
+        }
 
-            var sample = sensorIter.next();
-            var nextSample = sample;
-            var nextSampleTime = (sample != null) ? sample.when.value() : null;
+        var graphBottom = _height;
+        var graphHeight = _height * 0.40;
+        var graphWidth = _width;
 
-            for (var x = 0; x < graphWidth; x++) {
-                // Calculate the target time for this x position
-                var targetTime = oldestTime + (totalDuration * x / graphWidth);
+        // Determine the total time span in the data
+        var oldestTimeMoment = sensorIter.getOldestSampleTime() as Toybox.Time.Moment;
+        var newestTimeMoment = sensorIter.getNewestSampleTime() as Toybox.Time.Moment;
 
-                // Find the nearest sample to the target time
-                while (nextSampleTime != null && nextSampleTime < targetTime) {
-                    sample = nextSample;
-                    nextSample = sensorIter.next();
-                    nextSampleTime = (nextSample != null) ? nextSample.when.value() : null;
+        // nullcheck the TimeMoments
+        if (oldestTimeMoment == null ||  newestTimeMoment == null){
+            return;
+        }
+
+
+        var oldestTime = oldestTimeMoment.value() as Lang.Number;
+        var newestTime = newestTimeMoment.value() as Lang.Number;
+
+        if (oldestTime == null ||  newestTime == null){
+            return;
+        }
+
+        var totalDuration = newestTime - oldestTime;
+        
+
+        // Getting thenext sample
+        var sample = sensorIter.next();
+        // Nullchecking the next sample
+        if (sample == null) {
+            return;
+        } 
+        var nextSample = sample;
+        var nextSampleTime = sample.when.value() as Lang.Number;
+
+
+        for (var x = 0; x < graphWidth; x++) {
+            // Calculate the target time for this x position
+            var targetTime = oldestTime + (totalDuration * x / graphWidth);
+
+            // Find the nearest sample to the target time
+            while (nextSampleTime != null && nextSampleTime < targetTime) {
+                sample = nextSample;
+                nextSample = sensorIter.next();
+                nextSampleTime = (nextSample != null) ? nextSample.when.value() : null;
+            }
+
+            if (sample != null && sample.data != null) {
+                var heartRate = sample.data;
+                                    
+                var y = graphBottom*1.0 - (heartRate*1.0 / _heartRateZones[5]*1.0) * graphHeight;
+
+                // Color it, depending on the HR Zones, currently set for Running
+                if (heartRate < _heartRateZones[0]) {
+                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
+                } else if (heartRate <= _heartRateZones[1]) {
+                    dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
+                } else if (heartRate <= _heartRateZones[2]) {
+                    dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
+                } else if (heartRate <= _heartRateZones[3]) {
+                    dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
+                } else if (heartRate <= _heartRateZones[4]) {
+                    dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_ORANGE);
+                } else {
+                    dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
                 }
 
-                if (sample != null && sample.data != null) {
-                    var heartRate = sample.data;
-                                      
-                    var y = graphBottom*1.0 - (heartRate*1.0 / _heartRateZones[5]*1.0) * graphHeight;
-
-                    // Color it, depending on the HR Zones, currently set for Running
-                    if (heartRate < _heartRateZones[0]) {
-                        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-                    } else if (heartRate <= _heartRateZones[1]) {
-                        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
-                    } else if (heartRate <= _heartRateZones[2]) {
-                        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
-                    } else if (heartRate <= _heartRateZones[3]) {
-                        dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
-                    } else if (heartRate <= _heartRateZones[4]) {
-                        dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_ORANGE);
-                    } else {
-                        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
-                    }
-
-                    dc.drawLine(x, graphBottom, x, y);
-                }
+                dc.drawLine(x, graphBottom, x, y);
             }
         }
     }
 }
+

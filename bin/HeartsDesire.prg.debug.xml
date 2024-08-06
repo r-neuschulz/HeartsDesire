@@ -13,66 +13,81 @@
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="7" lineNum="7" parent="globals/HeartsDesireApp" pc="268435560" symbol="initialize"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="7" lineNum="8" parent="globals/HeartsDesireApp" pc="268435562" symbol="initialize"/>
 <entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireApp.mc" id="8" lineNum="16" parent="globals/HeartsDesireApp" pc="268435575" symbol="onStop"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="17" parent="globals/HeartRateHistoryView" pc="268435578" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="18" parent="globals/HeartRateHistoryView" pc="268435580" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="21" parent="globals/HeartRateHistoryView" pc="268435592" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="9" lineNum="24" parent="globals/HeartRateHistoryView" pc="268435612" symbol="initialize"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="29" parent="globals/HeartRateHistoryView" pc="268435651" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="30" parent="globals/HeartRateHistoryView" pc="268435654" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="31" parent="globals/HeartRateHistoryView" pc="268435684" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="32" parent="globals/HeartRateHistoryView" pc="268435719" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="33" parent="globals/HeartRateHistoryView" pc="268435747" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="35" parent="globals/HeartRateHistoryView" pc="268435781" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="40" parent="globals/HeartRateHistoryView" pc="268435783" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="41" parent="globals/HeartRateHistoryView" pc="268435786" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="42" parent="globals/HeartRateHistoryView" pc="268435798" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="45" parent="globals/HeartRateHistoryView" pc="268435806" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="46" parent="globals/HeartRateHistoryView" pc="268435818" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="47" parent="globals/HeartRateHistoryView" pc="268435863" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="50" parent="globals/HeartRateHistoryView" pc="268435908" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="51" parent="globals/HeartRateHistoryView" pc="268435924" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="54" parent="globals/HeartRateHistoryView" pc="268435966" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="55" parent="globals/HeartRateHistoryView" pc="268435982" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="57" parent="globals/HeartRateHistoryView" pc="268436024" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="58" parent="globals/HeartRateHistoryView" pc="268436032" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="59" parent="globals/HeartRateHistoryView" pc="268436038" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="60" parent="globals/HeartRateHistoryView" pc="268436047" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="61" parent="globals/HeartRateHistoryView" pc="268436062" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="64" parent="globals/HeartRateHistoryView" pc="268436071" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="65" parent="globals/HeartRateHistoryView" pc="268436087" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="66" parent="globals/HeartRateHistoryView" pc="268436103" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="68" parent="globals/HeartRateHistoryView" pc="268436110" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="69" parent="globals/HeartRateHistoryView" pc="268436120" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="70" parent="globals/HeartRateHistoryView" pc="268436124" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="72" parent="globals/HeartRateHistoryView" pc="268436149" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="74" parent="globals/HeartRateHistoryView" pc="268436160" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="77" parent="globals/HeartRateHistoryView" pc="268436173" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="78" parent="globals/HeartRateHistoryView" pc="268436190" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="79" parent="globals/HeartRateHistoryView" pc="268436194" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="80" parent="globals/HeartRateHistoryView" pc="268436204" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="83" parent="globals/HeartRateHistoryView" pc="268436232" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="84" parent="globals/HeartRateHistoryView" pc="268436249" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="86" parent="globals/HeartRateHistoryView" pc="268436258" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="89" parent="globals/HeartRateHistoryView" pc="268436295" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="90" parent="globals/HeartRateHistoryView" pc="268436308" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="91" parent="globals/HeartRateHistoryView" pc="268436331" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="92" parent="globals/HeartRateHistoryView" pc="268436345" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="93" parent="globals/HeartRateHistoryView" pc="268436368" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="94" parent="globals/HeartRateHistoryView" pc="268436382" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="95" parent="globals/HeartRateHistoryView" pc="268436403" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="96" parent="globals/HeartRateHistoryView" pc="268436417" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="97" parent="globals/HeartRateHistoryView" pc="268436438" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="98" parent="globals/HeartRateHistoryView" pc="268436452" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="100" parent="globals/HeartRateHistoryView" pc="268436475" symbol="onUpdate"/>
-<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="103" parent="globals/HeartRateHistoryView" pc="268436495" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="48" parent="globals/HeartRateHistoryView" pc="268435578" symbol="onLayout"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="49" parent="globals/HeartRateHistoryView" pc="268435580" symbol="onLayout"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="10" lineNum="50" parent="globals/HeartRateHistoryView" pc="268435594" symbol="onLayout"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="18" parent="globals/HeartRateHistoryView" pc="268435609" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="19" parent="globals/HeartRateHistoryView" pc="268435611" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="22" parent="globals/HeartRateHistoryView" pc="268435623" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="25" parent="globals/HeartRateHistoryView" pc="268435643" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="28" parent="globals/HeartRateHistoryView" pc="268435681" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="11" lineNum="29" parent="globals/HeartRateHistoryView" pc="268435690" symbol="initialize"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="12" lineNum="35" parent="globals/HeartRateHistoryView" pc="268435700" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="12" lineNum="36" parent="globals/HeartRateHistoryView" pc="268435703" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="12" lineNum="37" parent="globals/HeartRateHistoryView" pc="268435733" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="12" lineNum="38" parent="globals/HeartRateHistoryView" pc="268435768" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="12" lineNum="39" parent="globals/HeartRateHistoryView" pc="268435796" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="12" lineNum="41" parent="globals/HeartRateHistoryView" pc="268435830" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="55" parent="globals/HeartRateHistoryView" pc="268435832" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="60" parent="globals/HeartRateHistoryView" pc="268435835" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="63" parent="globals/HeartRateHistoryView" pc="268435847" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="64" parent="globals/HeartRateHistoryView" pc="268435853" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="67" parent="globals/HeartRateHistoryView" pc="268435857" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="68" parent="globals/HeartRateHistoryView" pc="268435902" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="71" parent="globals/HeartRateHistoryView" pc="268435947" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="72" parent="globals/HeartRateHistoryView" pc="268435963" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="75" parent="globals/HeartRateHistoryView" pc="268436001" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="76" parent="globals/HeartRateHistoryView" pc="268436017" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="78" parent="globals/HeartRateHistoryView" pc="268436055" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="81" parent="globals/HeartRateHistoryView" pc="268436063" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="82" parent="globals/HeartRateHistoryView" pc="268436069" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="85" parent="globals/HeartRateHistoryView" pc="268436073" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="86" parent="globals/HeartRateHistoryView" pc="268436080" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="87" parent="globals/HeartRateHistoryView" pc="268436093" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="90" parent="globals/HeartRateHistoryView" pc="268436100" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="91" parent="globals/HeartRateHistoryView" pc="268436109" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="94" parent="globals/HeartRateHistoryView" pc="268436118" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="95" parent="globals/HeartRateHistoryView" pc="268436130" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="99" parent="globals/HeartRateHistoryView" pc="268436134" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="100" parent="globals/HeartRateHistoryView" pc="268436143" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="102" parent="globals/HeartRateHistoryView" pc="268436152" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="103" parent="globals/HeartRateHistoryView" pc="268436164" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="106" parent="globals/HeartRateHistoryView" pc="268436168" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="110" parent="globals/HeartRateHistoryView" pc="268436175" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="112" parent="globals/HeartRateHistoryView" pc="268436184" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="113" parent="globals/HeartRateHistoryView" pc="268436190" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="115" parent="globals/HeartRateHistoryView" pc="268436194" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="116" parent="globals/HeartRateHistoryView" pc="268436198" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="119" parent="globals/HeartRateHistoryView" pc="268436212" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="121" parent="globals/HeartRateHistoryView" pc="268436223" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="124" parent="globals/HeartRateHistoryView" pc="268436236" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="125" parent="globals/HeartRateHistoryView" pc="268436253" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="126" parent="globals/HeartRateHistoryView" pc="268436257" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="127" parent="globals/HeartRateHistoryView" pc="268436266" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="130" parent="globals/HeartRateHistoryView" pc="268436294" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="131" parent="globals/HeartRateHistoryView" pc="268436311" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="133" parent="globals/HeartRateHistoryView" pc="268436320" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="136" parent="globals/HeartRateHistoryView" pc="268436357" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="137" parent="globals/HeartRateHistoryView" pc="268436370" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="138" parent="globals/HeartRateHistoryView" pc="268436393" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="139" parent="globals/HeartRateHistoryView" pc="268436407" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="140" parent="globals/HeartRateHistoryView" pc="268436430" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="141" parent="globals/HeartRateHistoryView" pc="268436444" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="142" parent="globals/HeartRateHistoryView" pc="268436465" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="143" parent="globals/HeartRateHistoryView" pc="268436479" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="144" parent="globals/HeartRateHistoryView" pc="268436500" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="145" parent="globals/HeartRateHistoryView" pc="268436514" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="147" parent="globals/HeartRateHistoryView" pc="268436537" symbol="onUpdate"/>
+<entry filename="D:\\Git\\Hearts Desire\\HeartsDesire\\source\\HeartsDesireView.mc" id="13" lineNum="150" parent="globals/HeartRateHistoryView" pc="268436557" symbol="onUpdate"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8388639" module="true" symbol="Graphics"/>
 <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
 <entry id="8389702" method="true" symbol="getHeartRateHistory"/>
+<entry field="true" id="10" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;_height&gt;"/>
 <entry id="8388647" module="true" symbol="UserProfile"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-<entry field="true" id="13" symbol="AppName"/>
+<entry field="true" id="15" symbol="AppName"/>
 <entry id="5" module="true" symbol="globals/Rez/Strings"/>
 <entry id="8388772" module="true" object="true" symbol="Fonts"/>
 <entry id="8388648" module="true" symbol="WatchUi"/>
@@ -82,14 +97,16 @@
 <entry id="8388771" module="true" object="true" symbol="Drawables"/>
 <entry id="8389275" method="true" symbol="getApp"/>
 <entry field="true" id="8" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;_bigNumProtomolecule&gt;"/>
-<entry id="10" method="true" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry id="12" method="true" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;"/>
 <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
 <entry id="8389809" symbol="order"/>
 <entry id="8388644" module="true" symbol="System"/>
 <entry id="8388769" module="true" object="true" symbol="Rez"/>
 <entry id="8388640" module="true" symbol="Lang"/>
-<entry field="true" id="11" symbol="LauncherIcon"/>
+<entry field="true" id="13" symbol="LauncherIcon"/>
 <entry id="8388610" symbol="statics"/>
+<entry id="8389123" method="true" symbol="onShow"/>
 <entry id="8389350" module="true" symbol="globals"/>
 <entry id="8388770" module="true" object="true" symbol="Strings"/>
 <entry id="8388702" method="true" symbol="initialize"/>
@@ -100,31 +117,35 @@
 <entry id="8389281" method="true" symbol="onStop"/>
 <entry id="8389781" module="true" symbol="SensorHistory"/>
 <entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+<entry field="true" id="11" symbol="&lt;globals/HeartRateHistoryView/&lt;&gt;_width&gt;"/>
 <entry id="7" object="true" symbol="HeartsDesireApp"/>
 <entry id="8388635" module="true" symbol="Application"/>
-<entry field="true" id="12" symbol="protomoleculefont"/>
+<entry field="true" id="14" symbol="protomoleculefont"/>
 </symbolTable>
 <localVars>
-<entry endPc="268435777" name="getMethod" stackId="1" startPc="268435684"/>
-<entry endPc="268435777" name="sixHours" stackId="2" startPc="268435684"/>
-<entry arg="true" endPc="268436529" name="dc" stackId="1" startPc="268435783"/>
-<entry endPc="268436528" name="clockTime" stackId="2" startPc="268435786"/>
-<entry endPc="268436528" name="timeStringHH" stackId="3" startPc="268435786"/>
-<entry endPc="268436528" name="timeStringMM" stackId="4" startPc="268435786"/>
-<entry endPc="268436528" name="sensorIter" stackId="5" startPc="268435786"/>
-<entry endPc="268436525" name="graphBottom" stackId="6" startPc="268436038"/>
-<entry endPc="268436525" name="graphHeight" stackId="7" startPc="268436038"/>
-<entry endPc="268436525" name="graphWidth" stackId="8" startPc="268436038"/>
-<entry endPc="268436525" name="oldestTime" stackId="9" startPc="268436038"/>
-<entry endPc="268436525" name="newestTime" stackId="10" startPc="268436038"/>
-<entry endPc="268436525" name="totalDuration" stackId="11" startPc="268436038"/>
-<entry endPc="268436525" name="sample" stackId="12" startPc="268436038"/>
-<entry endPc="268436525" name="nextSample" stackId="13" startPc="268436038"/>
-<entry endPc="268436525" name="nextSampleTime" stackId="14" startPc="268436038"/>
-<entry endPc="268436525" name="x" stackId="15" startPc="268436160"/>
-<entry endPc="268436515" name="targetTime" stackId="16" startPc="268436160"/>
-<entry endPc="268436512" name="heartRate" stackId="17" startPc="268436249"/>
-<entry endPc="268436512" name="y" stackId="18" startPc="268436249"/>
+<entry arg="true" endPc="268435608" name="dc" stackId="1" startPc="268435578"/>
+<entry endPc="268435826" name="getMethod" stackId="1" startPc="268435733"/>
+<entry endPc="268435826" name="sixHours" stackId="2" startPc="268435733"/>
+<entry arg="true" endPc="268436588" name="dc" stackId="1" startPc="268435832"/>
+<entry endPc="268436587" name="clockTime" stackId="2" startPc="268435835"/>
+<entry endPc="268436587" name="timeStringHH" stackId="3" startPc="268435835"/>
+<entry endPc="268436587" name="timeStringMM" stackId="4" startPc="268435835"/>
+<entry endPc="268436587" name="sensorIter" stackId="5" startPc="268435835"/>
+<entry endPc="268436587" name="graphBottom" stackId="6" startPc="268435835"/>
+<entry endPc="268436587" name="graphHeight" stackId="7" startPc="268435835"/>
+<entry endPc="268436587" name="graphWidth" stackId="8" startPc="268435835"/>
+<entry endPc="268436587" name="oldestTimeMoment" stackId="9" startPc="268435835"/>
+<entry endPc="268436587" name="newestTimeMoment" stackId="10" startPc="268435835"/>
+<entry endPc="268436587" name="oldestTime" stackId="11" startPc="268435835"/>
+<entry endPc="268436587" name="newestTime" stackId="12" startPc="268435835"/>
+<entry endPc="268436587" name="totalDuration" stackId="13" startPc="268435835"/>
+<entry endPc="268436587" name="sample" stackId="14" startPc="268435835"/>
+<entry endPc="268436587" name="nextSample" stackId="15" startPc="268435835"/>
+<entry endPc="268436587" name="nextSampleTime" stackId="16" startPc="268435835"/>
+<entry endPc="268436587" name="x" stackId="17" startPc="268436223"/>
+<entry endPc="268436577" name="targetTime" stackId="18" startPc="268436223"/>
+<entry endPc="268436574" name="heartRate" stackId="19" startPc="268436311"/>
+<entry endPc="268436574" name="y" stackId="20" startPc="268436311"/>
 </localVars>
 <deviceInfo deviceVersion="4866e5192c0c99025597cd8e6e841f3d774b64f7" partNumber="006-B4314-00"/>
 <annotations>
@@ -137,9 +158,9 @@
 <dataEntry label="globals/HeartsDesireApp" offset="125" parentId="globals" symbolId="HeartsDesireApp" type="class"/>
 <dataEntry label="globals/Rez" offset="196" parentId="globals" symbolId="Rez" type="module"/>
 <dataEntry label="globals/HeartRateHistoryView" offset="249" parentId="globals" symbolId="HeartRateHistoryView" type="class"/>
-<dataEntry label="globals/Rez/Drawables" offset="329" parentId="Rez" symbolId="Drawables" type="module"/>
-<dataEntry label="globals/Rez/Fonts" offset="364" parentId="Rez" symbolId="Fonts" type="module"/>
-<dataEntry label="globals/Rez/Strings" offset="399" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry label="globals/Rez/Drawables" offset="365" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry label="globals/Rez/Fonts" offset="400" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry label="globals/Rez/Strings" offset="435" parentId="Rez" symbolId="Strings" type="module"/>
 </dataEntryOffsetMappings>
 <functions>
 <functionEntry accessMode="public" endPc="268435471" name="&lt;init&gt;" parent="HeartsDesireApp" startPc="268435460">
@@ -177,13 +198,20 @@
 <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268435650" name="initialize" parent="HeartRateHistoryView" startPc="268435578">
+<functionEntry accessMode="public" name="onShow" parent="HeartRateHistoryView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435608" name="onLayout" parent="HeartRateHistoryView" startPc="268435578">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435699" name="initialize" parent="HeartRateHistoryView" startPc="268435609">
 <documentation><![CDATA[<div class="description"> Constructor<br/></div>]]></documentation>
 </functionEntry>
-<functionEntry accessMode="private" endPc="268435782" name="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;" parent="HeartRateHistoryView" startPc="268435651">
+<functionEntry accessMode="private" endPc="268435831" name="&lt;globals/HeartRateHistoryView/&lt;&gt;getHeartRateIterator&gt;" parent="HeartRateHistoryView" startPc="268435700">
 <documentation><![CDATA[<div class="description"> Get the heart rate iterator<br/> <div class="returns">Returns  The heart rate iterator</div><br/></div>]]></documentation>
 </functionEntry>
-<functionEntry accessMode="public" endPc="268436529" name="onUpdate" parent="HeartRateHistoryView" startPc="268435783">
+<functionEntry accessMode="public" endPc="268436588" name="onUpdate" parent="HeartRateHistoryView" startPc="268435832">
 <param id="dc"/>
 <documentation><![CDATA[<div class="description"> Update the view<br/> <div class="param"> dc Device context</div><br/></div>]]></documentation>
 </functionEntry>
