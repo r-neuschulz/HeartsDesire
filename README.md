@@ -1,19 +1,20 @@
 # HeartsDesire Garmin IQ Watchface
-![Downloads](https://img.shields.io/badge/CIQ_Store_downloads-38-green?style=flat-square)
+<!-- ![Downloads](https://img.shields.io/badge/CIQ_Store_downloads-38-green?style=flat-square)
 ![Github badge](https://developer.garmin.com/static/connect-iq_badge-dark-35b152d2074fb5abd7394662f78d8a4f.svg)
-
+ -->
+ 
 ## Introduction
 <!-- Briefly describe what the HeartsDesire watchface is and its purpose. -->
 
-I always been a big fan of how the Vivoactive HR displayed its heartrate graph. It was always highly informative, clearly designed, and . Th is repo aims to recreate that charming style with a basic watchface to have the Heartrate history visible at all times on round watches.
+I always been a big fan of how the Vivoactive HR displayed its heartrate graph. It was always highly informative, well designed, and always filled me with joy when I saw a large spike due to a run. The is repo aims to recreate that charming style with a basic watchface to have the heartrate history visible at all times on round watches.
 
 ## Features
 <!-- List the key features of the watchface. -->
 
 - Show the time (duh)
 - Show 4-6 h of HR history on the main page
-- Show the current HR (todo)
-- Switch between multiple color schemes (todo)
+- (todo: Show the current HR)
+- (todo: Switch between multiple color schemes)
 
 ## Installation Instructions
 <!-- Provide step-by-step instructions on how to install the watchface on a Garmin device. -->
@@ -22,12 +23,10 @@ Do one of the following:
 - Download from the Garmin IQ Store, you're ready to go
 - Download the .prg file from this repo, and put it via USB on the root of your device
 
-
-
 ## Customization
 <!-- Describe any customization options available and how to adjust them. -->
 
-Currently, the watchface is fixed, with no customization
+Currently, the watchface is fixed, with no customization enabled.
 
 ## Compatibility
 <!-- List the Garmin devices compatible with the watchface. -->
