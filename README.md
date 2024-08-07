@@ -37,7 +37,7 @@ Currently, the following Watches are supported:
 ## Screenshots
 <!-- Include screenshots of the watchface in action. -->
 
-<img src="image.png" alt="screenshot" width="200"/>
+<img src="images/image.png" alt="screenshot" width="200"/>
 
 ## Support
 
@@ -50,3 +50,6 @@ I'll occasionally check comments on the Garmin IQ Store, too.
 
 ## Acknowledgements
 <!-- Give credit to those who have contributed or inspired the project. -->
+- thanks to [TitanicTurtle](https://apps.garmin.com/en-US/developer/b71882df-2664-4584-893a-e15a21471c4b/apps) for the guidance and support on my first steps
+- shoutout to [Jim_m_58](https://forums.garmin.com/members/jim_5f00_m_5f00_58), for their continuous help and support
+- appreciation to [darrencrotton/SnapshotHR] for the initial inspiration, and open sourcing their project. 

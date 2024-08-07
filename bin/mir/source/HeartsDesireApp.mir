@@ -42,15 +42,15 @@ D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireApp_mc_20_68_22_4_stop:
     }
 }
 [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireApp.mc"; @line = 26; ]
-function getApp() as HeartsDesireApp {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireApp_mc_26_37_28_0_start:
+function getApp() as HeartsDesireApp or Null {
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireApp_mc_26_38_28_0_start:
 [ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireApp.mc" 27 4 ]
     %tmp.1 = getm $.Toybox.Application;
     %tmp.2 = getv function %tmp.1 :getApp;
     %tmp.3 = invoke %tmp.1 %tmp.2();
     %tmp.4 = as %tmp.3 HeartsDesireApp;
     ret %tmp.4;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireApp_mc_26_37_28_0_stop:
+D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireApp_mc_26_38_28_0_stop:
 }
 [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireApp.mc"; @line = 1; ]
 <init> {

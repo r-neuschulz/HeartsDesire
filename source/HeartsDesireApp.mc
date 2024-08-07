@@ -23,6 +23,6 @@ class HeartsDesireApp extends Application.AppBase {
 
 }
 
-function getApp() as HeartsDesireApp {
+function getApp() as HeartsDesireApp? {
     return Application.getApp() as HeartsDesireApp;
 }

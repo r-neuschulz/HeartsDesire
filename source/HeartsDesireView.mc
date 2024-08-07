@@ -35,20 +35,23 @@ class HeartRateHistoryView extends WatchUi.View {
         System.println("Constructor finished");
     }
 
-    //! Get the heart rate iterator
-    //! @return The heart rate iterator
-    private function getHeartRateIterator() as SensorHistoryIterator? {
+    // Get the heart rate iterator
+    // @return The heart rate iterator
+    private function getSensorRateIterator() {
         System.println("Getting heart rate iterator");
-        if (Toybox has :SensorHistory && SensorHistory has :getHeartRateHistory) {
-            var getMethod = new Lang.Method(SensorHistory, :getHeartRateHistory);
+
+        // Check device for SensorHistory compatibility
+        if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
             var sixHours = new Time.Duration(21600);  // Six hours in seconds
             System.println("Invoking getHeartRateHistory method");
-            return getMethod.invoke({:period => sixHours, :order => SensorHistory.ORDER_OLDEST_FIRST}) as SensorHistoryIterator;
+
+            return Toybox.SensorHistory.getHeartRateHistory({:period => sixHours, :order => SensorHistory.ORDER_OLDEST_FIRST});
         }
+
         return null;
     }
 
-    public function onShow() as Void {
+    public function onShow(){
         System.println("HeartRateHistoryView shown");
     }
 
@@ -63,7 +66,7 @@ class HeartRateHistoryView extends WatchUi.View {
 
     //! Update the view
     //! @param dc Device context
-    public function onUpdate(dc as Dc) as Void {
+    public function onUpdate(dc) {
         System.println("Updating view");
 
         // Draw Background and clear device context
@@ -83,7 +86,7 @@ class HeartRateHistoryView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
         dc.drawText(_width / 2, _height * 0.60, _bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
-        var sensorIter = getHeartRateIterator();
+        var sensorIter = getSensorRateIterator();
 
         // Nullcheck the sensorIterator
         if (sensorIter == null) {
