@@ -4,6 +4,7 @@ import Toybox.SensorHistory;
 import Toybox.System;
 import Toybox.WatchUi;
 import Toybox.UserProfile;
+import Toybox.Time;
 
 //! Display graph of heart rate history
 class HeartRateHistoryView extends WatchUi.View {
@@ -17,33 +18,33 @@ class HeartRateHistoryView extends WatchUi.View {
     public function initialize() {
         View.initialize();
 
-        System.println("Initializing HeartRateHistoryView");
+        System.println("[" + Time.now().value() + "] initialize() - Initializing HeartRateHistoryView");
 
         // Determine and store HRZones once
         _heartRateZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
-        System.println("Heart rate zones: " + _heartRateZones.toString());
+        System.println("[" + Time.now().value() + "] initialize() - Heart rate zones: " + _heartRateZones.toString());
 
         // Init the correct font        
         _bigNumProtomolecule = WatchUi.loadResource(Rez.Fonts.protomoleculefont);
-        System.println("Font loaded: " + _bigNumProtomolecule); // I get until here, according to log.
+        System.println("[" + Time.now().value() + "] initialize() - Font loaded: " + _bigNumProtomolecule);
 
         // Dummy Values, will be overwritten on onLayout
         _width = 50;
         _height = 50;
 
-        System.println("Dummy width and height loaded: w = " + _width + ", h = " + _height);  
-        System.println("Constructor finished");
+        System.println("[" + Time.now().value() + "] initialize() - Dummy width and height loaded: w = " + _width + ", h = " + _height);  
+        System.println("[" + Time.now().value() + "] initialize() - Constructor finished");
     }
 
     // Get the heart rate iterator
     // @return The heart rate iterator
     private function getSensorRateIterator() {
-        System.println("Getting heart rate iterator");
+        System.println("[" + Time.now().value() + "] getSensorRateIterator() - Getting heart rate iterator");
 
         // Check device for SensorHistory compatibility
         if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
             var sixHours = new Time.Duration(21600);  // Six hours in seconds
-            System.println("Invoking getHeartRateHistory method");
+            System.println("[" + Time.now().value() + "] getSensorRateIterator() - Invoking getHeartRateHistory method");
 
             return Toybox.SensorHistory.getHeartRateHistory({:period => sixHours, :order => SensorHistory.ORDER_OLDEST_FIRST});
         }
@@ -52,22 +53,22 @@ class HeartRateHistoryView extends WatchUi.View {
     }
 
     public function onShow(){
-        System.println("HeartRateHistoryView shown");
+        System.println("[" + Time.now().value() + "] onShow() - HeartRateHistoryView shown");
     }
 
     public function onLayout(dc) {
-        System.println("onLayout started");
+        System.println("[" + Time.now().value() + "] onLayout() - onLayout started");
 
         _width = dc.getWidth();
         _height = dc.getHeight();
 
-        System.println("Screen dimensions: width=" + _width + ", height=" + _height);
+        System.println("[" + Time.now().value() + "] onLayout() - Screen dimensions: width=" + _width + ", height=" + _height);
     }
 
     //! Update the view
     //! @param dc Device context
     public function onUpdate(dc) {
-        System.println("Updating view");
+        System.println("[" + Time.now().value() + "] onUpdate() - Updating view");
 
         // Draw Background and clear device context
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
@@ -90,7 +91,7 @@ class HeartRateHistoryView extends WatchUi.View {
 
         // Nullcheck the sensorIterator
         if (sensorIter == null) {
-            System.println("No heart rate data available");
+            System.println("[" + Time.now().value() + "] onUpdate() - No heart rate data available");
             return;
         }
 
@@ -104,7 +105,7 @@ class HeartRateHistoryView extends WatchUi.View {
 
         // Nullcheck the TimeMoments
         if (oldestTimeMoment == null || newestTimeMoment == null) {
-            System.println("Time moments are null");
+            System.println("[" + Time.now().value() + "] onUpdate() - Time moments are null");
             return;
         }
 
@@ -112,28 +113,28 @@ class HeartRateHistoryView extends WatchUi.View {
         var newestTime = newestTimeMoment.value() as Lang.Number or Null;
 
         if (oldestTime == null || newestTime == null) {
-            System.println("Oldest or newest time is null");
+            System.println("[" + Time.now().value() + "] onUpdate() - Oldest or newest time is null");
             return;
         }
 
-        System.println("Oldest time: " + oldestTime);
-        System.println("Newest time: " + newestTime);
+        System.println("[" + Time.now().value() + "] onUpdate() - Oldest time: " + oldestTime);
+        System.println("[" + Time.now().value() + "] onUpdate() - Newest time: " + newestTime);
 
         var totalDuration = newestTime - oldestTime;
-        System.println("Total duration: " + totalDuration);
+        System.println("[" + Time.now().value() + "] onUpdate() - Total duration: " + totalDuration);
 
         // Getting the next sample
         var sample = sensorIter.next();
         // Nullchecking the next sample
         if (sample == null) {
-            System.println("No samples found");
+            System.println("[" + Time.now().value() + "] onUpdate() - No samples found");
             return;
         }
         
         var nextSample = sample;
         var nextSampleTime = sample.when.value() as Lang.Number or Null;
 
-        System.println("Starting graph drawing loop");
+        System.println("[" + Time.now().value() + "] onUpdate() - Starting graph drawing loop");
         for (var x = 0; x < graphWidth; x++) {
             // Calculate the target time for this x position
             var targetTime = oldestTime + (totalDuration * x / graphWidth);
@@ -166,7 +167,7 @@ class HeartRateHistoryView extends WatchUi.View {
 
                 //Printing one element of the loop here
                 if (x == 0){
-                    System.println("Drawing heart rate at x=" + x + ", y=" + y);
+                    System.println("[" + Time.now().value() + "] onUpdate() - Drawing heart rate at x=" + x + ", y=" + y);
                 }
 
                 dc.drawLine(x, graphBottom, x, y);
