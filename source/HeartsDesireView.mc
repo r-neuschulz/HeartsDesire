@@ -32,39 +32,28 @@ class heartsDesireView extends Ui.WatchFace {
         WatchFace.initialize();
         
         //read last values from the Object Store
-        //counter now read in app initialize
-        //var temp=App.getApp().getProperty(OSCOUNTER);
-        //if(temp!=null && temp instanceof Number) {counter=temp;}
- 
-        //var temp=App.getApp().getProperty(OSDATA);
         var temp=null;
         if(temp!=null && temp instanceof String) {_bgdata=temp;}
         
-        var now = Sys.getClockTime();
-    	var ts = now.hour + ":" + now.min.format("%02d");
-        
-        Sys.println("From OS: data="+ _bgdata + " " + _counter + " at "+ts);        
-    
-        // My Code
         // Init the correct font        
         bigNumProtomolecule = Ui.loadResource(Rez.Fonts.protomoleculefont);
-        System.println("[" + System.getTimer() + "] initialize() - Font loaded: " + bigNumProtomolecule);
+        // System.println("[" + System.getTimer() + "] initialize() - Font loaded: " + bigNumProtomolecule);
 
         // Determine and store HRZones once
         heartRateZones = UserProfile.getHeartRateZones(Up.HR_ZONE_SPORT_GENERIC);
-        System.println("[" + System.getTimer() + "] initialize() - Heart rate zones: " + heartRateZones.toString());
+        // System.println("[" + System.getTimer() + "] initialize() - Heart rate zones: " + heartRateZones.toString());
 
 
     }
 
     // Load your resources here
     function onLayout(dc) {
-        System.println("[" + System.getTimer() + "] onLayout() - onLayout started");
+        // System.println("[" + System.getTimer() + "] onLayout() - onLayout started");
 
         width = dc.getWidth();
         height = dc.getHeight();
 
-        System.println("[" + System.getTimer() + "] onLayout() - Screen dimensions: width=" + width + ", height=" + height);
+        // System.println("[" + System.getTimer() + "] onLayout() - Screen dimensions: width=" + width + ", height=" + height);
      }
 
     // Called when this View is brought to the foreground. Restore
@@ -75,29 +64,31 @@ class heartsDesireView extends Ui.WatchFace {
 
     // Update the view
     function onUpdate(dc) {
-        u++;
-
-        // Get and show the current time
-        var clockTime = Sys.getClockTime();
-        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-		
-		// Clear the DC
+        // // Display Debug Information
         
-        dc.setColor(Gfx.COLOR_BLACK,Gfx.COLOR_BLACK);
-		dc.clear();
+        // u++;
 
-
-		dc.setColor(Gfx.COLOR_BLUE,Gfx.COLOR_TRANSPARENT);
+        // // Get and show the current time
+        // var clockTime = Sys.getClockTime();
+        // var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
 		
-		dc.drawText(width/2,height-40,Gfx.FONT_XTINY,timeString,Gfx.TEXT_JUSTIFY_CENTER);
-		dc.drawText(width/2,height-60,Gfx.FONT_XTINY,"BG Available? "+_canDoBG,Gfx.TEXT_JUSTIFY_CENTER);
-		dc.drawText(width/2,height-80,Gfx.FONT_XTINY,"Count="+_counter,Gfx.TEXT_JUSTIFY_CENTER);
-		dc.drawText(width/2,height-100,Gfx.FONT_XTINY,"_bgdata="+_bgdata,Gfx.TEXT_JUSTIFY_CENTER);
-		dc.drawText(width/2,height-120,Gfx.FONT_XTINY,"onUpdate="+u,Gfx.TEXT_JUSTIFY_CENTER);
+		// // Clear the DC
+        
+        // dc.setColor(Gfx.COLOR_BLACK,Gfx.COLOR_BLACK);
+		// dc.clear();
+
+
+		// dc.setColor(Gfx.COLOR_BLUE,Gfx.COLOR_TRANSPARENT);
+		
+		// dc.drawText(width/2,height-40,Gfx.FONT_XTINY,timeString,Gfx.TEXT_JUSTIFY_CENTER);
+		// dc.drawText(width/2,height-60,Gfx.FONT_XTINY,"BG Available? "+_canDoBG,Gfx.TEXT_JUSTIFY_CENTER);
+		// dc.drawText(width/2,height-80,Gfx.FONT_XTINY,"Count="+_counter,Gfx.TEXT_JUSTIFY_CENTER);
+		// dc.drawText(width/2,height-100,Gfx.FONT_XTINY,"_bgdata="+_bgdata,Gfx.TEXT_JUSTIFY_CENTER);
+		// dc.drawText(width/2,height-120,Gfx.FONT_XTINY,"onUpdate="+u,Gfx.TEXT_JUSTIFY_CENTER);
     
         // My Functions
 
-        System.println("[" + System.getTimer() + "] onUpdate() - Updating view");
+        // System.println("[" + System.getTimer() + "] onUpdate() - Updating view");
 
 
         // Get and show the current time
@@ -105,7 +96,7 @@ class heartsDesireView extends Ui.WatchFace {
         var timeStringHH = Lang.format("$1$", [showClockTime.hour.format("%02d")]);
         var timeStringMM = Lang.format("$1$", [showClockTime.min.format("%02d")]);
 
-        System.println("[" + System.getTimer() + "] onUpdate() - Updating view");
+        // System.println("[" + System.getTimer() + "] onUpdate() - Updating view");
 
 
         // Draw HH part
@@ -121,7 +112,7 @@ class heartsDesireView extends Ui.WatchFace {
 
         // Nullcheck the sensorIterator
         if (sensorIter == null) {
-            System.println("[" + System.getTimer() + "] onUpdate() - No heart rate data available");
+            // System.println("[" + System.getTimer() + "] onUpdate() - No heart rate data available");
             return;
         }
 
@@ -135,7 +126,7 @@ class heartsDesireView extends Ui.WatchFace {
 
         // Nullcheck the TimeMoments
         if (oldestTimeMoment == null || newestTimeMoment == null) {
-            System.println("[" + System.getTimer() + "] onUpdate() - Time moments are null");
+            // System.println("[" + System.getTimer() + "] onUpdate() - Time moments are null");
             return;
         }
 
@@ -143,28 +134,29 @@ class heartsDesireView extends Ui.WatchFace {
         var newestTime = newestTimeMoment.value() as Lang.Number or Null;
 
         if (oldestTime == null || newestTime == null) {
-            System.println("[" + System.getTimer() + "] onUpdate() - Oldest or newest time is null");
+            // System.println("[" + System.getTimer() + "] onUpdate() - Oldest or newest time is null");
             return;
         }
 
-        System.println("[" + System.getTimer() + "] onUpdate() - Oldest time: " + oldestTime);
-        System.println("[" + System.getTimer() + "] onUpdate() - Newest time: " + newestTime);
+        // System.println("[" + System.getTimer() + "] onUpdate() - Oldest time: " + oldestTime);
+        // System.println("[" + System.getTimer() + "] onUpdate() - Newest time: " + newestTime);
 
         var totalDuration = newestTime - oldestTime;
-        System.println("[" + System.getTimer() + "] onUpdate() - Total duration: " + totalDuration);
+
+        // System.println("[" + System.getTimer() + "] onUpdate() - Total duration: " + totalDuration);
 
         // Getting the next sample
         var sample = sensorIter.next();
         // Nullchecking the next sample
         if (sample == null) {
-            System.println("[" + System.getTimer() + "] onUpdate() - No samples found");
+            // System.println("[" + System.getTimer() + "] onUpdate() - No samples found");
             return;
         }
         
         var nextSample = sample;
         var nextSampleTime = sample.when.value() as Lang.Number or Null;
 
-        System.println("[" + System.getTimer() + "] onUpdate() - Starting graph drawing loop");
+        // System.println("[" + System.getTimer() + "] onUpdate() - Starting graph drawing loop");
         
         //Don't paint the graph entirely left to right, only make it look like it would at RHR.
         var reducedWidth = 0.87*graphWidth;

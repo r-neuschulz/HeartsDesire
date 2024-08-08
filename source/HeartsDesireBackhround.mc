@@ -10,16 +10,19 @@ class BgbgServiceDelegate extends Toybox.System.ServiceDelegate {
 	
 	function initialize() {
 		Sys.ServiceDelegate.initialize();
-		_inBackground=true;				//trick for onExit()
+		
+		// trick for onexit()
+		_inBackground=true;
 	}
 	
     function onTemporalEvent() {
-    	var now=Sys.getClockTime();
+    	
+		var now=Sys.getClockTime();
     	var ts=now.hour+":"+now.min.format("%02d");
         
-		Sys.println("bg exit: "+ts);
+		// Sys.println("bg exit: "+ts);
         
-		//just return the timestamp
+		// just return the timestamp
         Background.exit(ts);
     }
     
