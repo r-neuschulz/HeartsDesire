@@ -4,6 +4,8 @@ using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.Application as App;
 using Toybox.UserProfile as Up;
+using Toybox.ActivityMonitor as Act;
+using Toybox.Activity as Acty;
 
 class heartsDesireView extends Ui.WatchFace {
 
@@ -12,7 +14,7 @@ class heartsDesireView extends Ui.WatchFace {
     private var bigNumProtomolecule as Ui.FontResource or Null;
     private var width, height as Lang.Number or Null;
 
-    private var u = 0;
+    // private var u = 0;
 
     private function getSensorRateIterator() {
         Sys.println("[" + Sys.getTimer() + "] getSensorRateIterator() - Getting heart rate iterator");
@@ -27,6 +29,23 @@ class heartsDesireView extends Ui.WatchFace {
 
         return null;
     }
+
+    private function getHeartRateColor(inheartRate, inheartRateZones as Lang.Array or Null) {
+        if (inheartRate < inheartRateZones[0]) {
+            return Graphics.COLOR_WHITE;
+        } else if (inheartRate <= inheartRateZones[1]) {
+            return Graphics.COLOR_LT_GRAY;
+        } else if (inheartRate <= inheartRateZones[2]) {
+            return Graphics.COLOR_BLUE;
+        } else if (inheartRate <= inheartRateZones[3]) {
+            return Graphics.COLOR_GREEN;
+        } else if (inheartRate <= inheartRateZones[4]) {
+            return Graphics.COLOR_ORANGE;
+        } else {
+            return Graphics.COLOR_RED;
+        }
+    }
+
 
     function initialize() {
         WatchFace.initialize();
@@ -72,10 +91,7 @@ class heartsDesireView extends Ui.WatchFace {
         // var clockTime = Sys.getClockTime();
         // var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
 		
-		// // Clear the DC
-        
-        // dc.setColor(Gfx.COLOR_BLACK,Gfx.COLOR_BLACK);
-		// dc.clear();
+		
 
 
 		// dc.setColor(Gfx.COLOR_BLUE,Gfx.COLOR_TRANSPARENT);
@@ -90,6 +106,10 @@ class heartsDesireView extends Ui.WatchFace {
 
         // System.println("[" + System.getTimer() + "] onUpdate() - Updating view");
 
+        // // Clear the DC
+        
+        dc.setColor(Gfx.COLOR_BLACK,Gfx.COLOR_BLACK);
+		dc.clear();
 
         // Get and show the current time
         var showClockTime = System.getClockTime();
@@ -101,11 +121,11 @@ class heartsDesireView extends Ui.WatchFace {
 
         // Draw HH part
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-        dc.drawText(width / 2, height * 0.28, bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(width / 2, height * 0.20, bigNumProtomolecule, timeStringHH, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         // Draw MM part
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-        dc.drawText(width / 2, height * 0.60, bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+        dc.drawText(width / 2, height * 0.53, bigNumProtomolecule, timeStringMM, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
 
         // Draw HR Graph
         var sensorIter = getSensorRateIterator();
@@ -117,7 +137,7 @@ class heartsDesireView extends Ui.WatchFace {
         }
 
         var graphBottom = height;
-        var graphHeight = height * 0.40;
+        var graphHeight = height * 0.43;
         var graphWidth = width;
 
         // Determine the total time span in the data
@@ -156,14 +176,17 @@ class heartsDesireView extends Ui.WatchFace {
         var nextSample = sample;
         var nextSampleTime = sample.when.value() as Lang.Number or Null;
 
-        // System.println("[" + System.getTimer() + "] onUpdate() - Starting graph drawing loop");
+        System.println("[" + System.getTimer() + "] onUpdate() - Starting graph drawing loop");
         
-        //Don't paint the graph entirely left to right, only make it look like it would at RHR.
-        var reducedWidth = 0.87*graphWidth;
+        var reducedWidth = (0.88 * graphWidth);  // Convert to integer not needed
+        var yCoordinates = new [reducedWidth + 1]; // Array to store the y coordinates
+        var colorArray = new [reducedWidth + 1];   // Array to store the colors
 
-        for (var x = 0; x < reducedWidth; x++) {
+        var x = 0;
+        // First loop: Calculate and store the y coordinates and colors
+        for (x = 0; x <= reducedWidth; x++) { // Loop from 0 to reducedWidth inclusive
             // Calculate the target time for this x position
-            var targetTime = oldestTime + (totalDuration * x / graphWidth);
+            var targetTime = oldestTime + (totalDuration * x / reducedWidth);
 
             // Find the nearest sample to the target time
             while (nextSampleTime != null && nextSampleTime < targetTime) {
@@ -174,51 +197,92 @@ class heartsDesireView extends Ui.WatchFace {
 
             if (sample != null && sample.data != null) {
                 var heartRate = sample.data;
-                var y = graphBottom*1.0 - (heartRate*1.0 / heartRateZones[5]*1.0) * graphHeight;
-
-                // Color it, depending on the HR Zones, currently set for Running
-                if (heartRate < heartRateZones[0]) {
-                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-                } else if (heartRate <= heartRateZones[1]) {
-                    dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
-                } else if (heartRate <= heartRateZones[2]) {
-                    dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
-                } else if (heartRate <= heartRateZones[3]) {
-                    dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
-                } else if (heartRate <= heartRateZones[4]) {
-                    dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_ORANGE);
-                } else {
-                    dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
-                }
-
-                //Printing one element of the loop here
-                if (x == 0){
-                    Sys.println("[" + Sys.getTimer() + "] onUpdate() - Drawing heart rate at x=" + x + ", y=" + y);
-                }
-
-                dc.drawLine(x, graphBottom, x, y);
+                var y = graphBottom * 1.0 - (heartRate * 1.0 / heartRateZones[5] * 1.0) * graphHeight;
+                yCoordinates[x] = y;
+                colorArray[x] = getHeartRateColor(heartRate, heartRateZones);
+            } else {
+                yCoordinates[x] = graphBottom; // Default to graphBottom if no data
+                colorArray[x] = Graphics.COLOR_WHITE; // Default to white color if no data
             }
         }
-    
-    }
 
-    // Called when this View is removed from the screen. Save the
-    // state of this View here. This includes freeing resources from
-    // memory.
-    function onHide() {
-    	//may not be called on real watch  Moved to onStop()
-    	//var now=Sys.getClockTime();
-    	//var ts=now.hour+":"+now.min.format("%02d");        
-        //Sys.println("onHide counter="+counter+" "+ts);    
-    	//App.getApp().setProperty(OSCOUNTER, counter);    
-    }
+        // Second loop: Draw the graph and the black outline
+        for (x = 0; x < reducedWidth; x++) {
+            var y = yCoordinates[x];
+            var prevY = (x > 0) ? yCoordinates[x - 1] : graphBottom;
+            var nextY = (x < reducedWidth - 1) ? yCoordinates[x + 1] : graphBottom;
 
-    // The user has just looked at their watch. Timers and animations may be started here.
-    function onExitSleep() {
-    }
+            // Set the color based on the stored color array
+            dc.setColor(colorArray[x], colorArray[x]);
 
-    // Terminate any active timers and prepare for slow updates.
-    function onEnterSleep() {
-    }
+            // Printing one element of the loop here
+            // if (x == 0) {
+            //     Sys.println("[" + Sys.getTimer() + "] onUpdate() - Drawing heart rate at x=" + x + ", y=" + y);
+            // }
 
+            // Draw the original line
+            dc.drawLine(x, graphBottom, x, y);
+
+            
+
+            var outlineY = y + 1; // Start with y + 1 as the initial value
+
+            if (prevY != null && prevY + 1 > outlineY) {
+                outlineY = prevY + 1; // Update if prevY + 1 is greater
+            }
+
+            if (nextY != null && nextY + 1 > outlineY) {
+                outlineY = nextY + 1; // Update if nextY + 1 is greater
+            }
+            Sys.println("[" + Sys.getTimer() + "] onUpdate() - Drawing heart rate at x=" + x + ", y=" + y);
+            
+            // Draw the black outline line on top
+            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+            dc.drawLine(x, y, x, outlineY);
+        }
+
+
+
+        var heartRate = 0;
+        var currentHeartRate = Activity.getActivityInfo().currentHeartRate;
+
+        if (currentHeartRate != null) {
+            heartRate = currentHeartRate;
+        }
+
+        if (currentHeartRate == null && Act has :getHeartRateHistory) {
+            var HRH = Act.getHeartRateHistory(1, true);
+            var HRS = HRH.next();
+
+            if (HRS != null && HRS.heartRate != Act.INVALID_HR_SAMPLE) {
+                heartRate = HRS.heartRate;
+            }
+        }
+
+        var heartRateColor = getHeartRateColor(heartRate, heartRateZones);
+
+        dc.setColor(heartRateColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(width/1.3,height-180,Gfx.FONT_TINY,heartRate.toString(),Gfx.TEXT_JUSTIFY_CENTER);
+
+        
+        }
+
+        // Called when this View is removed from the screen. Save the
+        // state of this View here. This includes freeing resources from
+        // memory.
+        function onHide() {
+            //may not be called on real watch  Moved to onStop()
+            //var now=Sys.getClockTime();
+            //var ts=now.hour+":"+now.min.format("%02d");        
+            //Sys.println("onHide counter="+counter+" "+ts);    
+            //App.getApp().setProperty(OSCOUNTER, counter);    
+        }
+
+        // The user has just looked at their watch. Timers and animations may be started here.
+        function onExitSleep() {
+        }
+
+        // Terminate any active timers and prepare for slow updates.
+        function onEnterSleep() {
+        }
 }
