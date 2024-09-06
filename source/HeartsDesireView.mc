@@ -21,10 +21,7 @@ class heartsDesireView extends Ui.WatchFace {
 
         // Check device for SensorHistory compatibility
         if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
-            var sixHours = new Time.Duration(21600);  // Six hours in seconds
-            Sys.println("[" + Sys.getTimer() + "] getSensorRateIterator() - Invoking getHeartRateHistory method");
-
-            return Toybox.SensorHistory.getHeartRateHistory({:period => sixHours, :order => SensorHistory.ORDER_OLDEST_FIRST});
+            return Toybox.SensorHistory.getHeartRateHistory({:period => 360, :order => SensorHistory.ORDER_OLDEST_FIRST});
         }
 
         return null;
@@ -140,41 +137,8 @@ class heartsDesireView extends Ui.WatchFace {
         var graphHeight = height * 0.43;
         var graphWidth = width;
 
-        // Determine the total time span in the data
-        var oldestTimeMoment = sensorIter.getOldestSampleTime() as Toybox.Time.Moment or Null;
-        var newestTimeMoment = sensorIter.getNewestSampleTime() as Toybox.Time.Moment or Null;
-
-        // Nullcheck the TimeMoments
-        if (oldestTimeMoment == null || newestTimeMoment == null) {
-            // System.println("[" + System.getTimer() + "] onUpdate() - Time moments are null");
-            return;
-        }
-
-        var oldestTime = oldestTimeMoment.value() as Lang.Number or Null;
-        var newestTime = newestTimeMoment.value() as Lang.Number or Null;
-
-        if (oldestTime == null || newestTime == null) {
-            // System.println("[" + System.getTimer() + "] onUpdate() - Oldest or newest time is null");
-            return;
-        }
-
-        // System.println("[" + System.getTimer() + "] onUpdate() - Oldest time: " + oldestTime);
-        // System.println("[" + System.getTimer() + "] onUpdate() - Newest time: " + newestTime);
-
-        var totalDuration = newestTime - oldestTime;
-
-        // System.println("[" + System.getTimer() + "] onUpdate() - Total duration: " + totalDuration);
-
-        // Getting the next sample
-        var sample = sensorIter.next();
-        // Nullchecking the next sample
-        if (sample == null) {
-            // System.println("[" + System.getTimer() + "] onUpdate() - No samples found");
-            return;
-        }
         
-        var nextSample = sample;
-        var nextSampleTime = sample.when.value() as Lang.Number or Null;
+        // System.println("[" + System.getTimer() + "] onUpdate() - Total duration: " + totalDuration);
 
         System.println("[" + System.getTimer() + "] onUpdate() - Starting graph drawing loop");
         
@@ -182,18 +146,20 @@ class heartsDesireView extends Ui.WatchFace {
         var yCoordinates = new [reducedWidth + 1]; // Array to store the y coordinates
         var colorArray = new [reducedWidth + 1];   // Array to store the colors
 
-        var x = 0;
-        // First loop: Calculate and store the y coordinates and colors
-        for (x = 0; x <= reducedWidth; x++) { // Loop from 0 to reducedWidth inclusive
-            // Calculate the target time for this x position
-            var targetTime = oldestTime + (totalDuration * x / reducedWidth);
+        // Assuming sensorData is the array containing the heart rate samples
+        var totalSamples = sensorIter;
+        var indices = new [reducedWidth + 1];
+        var stepSize = totalSamples / reducedWidth;
 
-            // Find the nearest sample to the target time
-            while (nextSampleTime != null && nextSampleTime < targetTime) {
-                sample = nextSample;
-                nextSample = sensorIter.next();
-                nextSampleTime = (nextSample != null) ? nextSample.when.value() : null;
-            }
+        // Calculate the index array
+        for (var x = 0; x <= reducedWidth; x++) {
+            indices[x] = (x * stepSize).toNumber;
+        }
+
+        // Iterate through the precomputed index array
+        for (var x = 0; x <= reducedWidth; x++) {
+            var sampleIndex = indices[x];
+            var sample = sensorIter[sampleIndex];  // Fetch the heart rate sample
 
             if (sample != null && sample.data != null) {
                 var heartRate = sample.data;
@@ -207,7 +173,7 @@ class heartsDesireView extends Ui.WatchFace {
         }
 
         // Second loop: Draw the graph and the black outline
-        for (x = 0; x < reducedWidth; x++) {
+        for (var x = 0; x < reducedWidth; x++) {
             var y = yCoordinates[x];
             var prevY = (x > 0) ? yCoordinates[x - 1] : graphBottom;
             var nextY = (x < reducedWidth - 1) ? yCoordinates[x + 1] : graphBottom;

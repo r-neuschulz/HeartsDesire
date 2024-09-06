@@ -1,41 +1,41 @@
-[ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 1; ]
+[ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 1; ]
 using Toybox.Background;
-[ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 2; ]
+[ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 2; ]
 using Toybox.System as :Sys;
-[ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 8; background = true; ]
+[ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 8; background = true; ]
 class BgbgServiceDelegate extends Toybox.System.ServiceDelegate{
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 9; ]
+    [ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 9; ]
     <init> {
     }
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 9; ]
+    [ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 9; ]
     static
     <init> {
     }
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 11; ]
+    [ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 11; ]
     function initialize() as Void {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_11_23_16_1_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc" 12 2 ]
+C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_11_23_16_1_start:
+[ "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc" 12 2 ]
         %tmp.1 = getm $.Toybox.System;
         %tmp.2 = getv %tmp.1 :ServiceDelegate;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc" 15 2 ]
+[ "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc" 15 2 ]
         %tmp.4 = true;
         putv self :_inBackground %tmp.4;
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_11_23_16_1_stop:
+C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_11_23_16_1_stop:
     }
-    [ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 18; ]
+    [ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 18; ]
     function onTemporalEvent() {
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_start:
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc" 20 2 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_stop" ]
+C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_start:
+[ "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc" 20 2 ]
+        [ "C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_start" "C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_stop" ]
         %now.1 = local;
         %tmp.1 = getm $.Toybox.System;
         %tmp.2 = getv function %tmp.1 :getClockTime;
         %tmp.3 = invoke %tmp.1 %tmp.2();
         lputv %now.1 %tmp.3;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc" 21 5 ]
-        [ "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_start" "D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_stop" ]
+[ "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc" 21 5 ]
+        [ "C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_start" "C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_stop" ]
         %ts.2 = local;
         %tmp.4 = lgetv %now.1;
         %tmp.5 = getv %tmp.4 :hour;
@@ -48,14 +48,14 @@ D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_sta
         %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
         %tmp.13 = add %tmp.7 %tmp.12;
         lputv %ts.2 %tmp.13;
-[ "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc" 26 8 ]
+[ "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc" 26 8 ]
         %tmp.14 = getm $.Toybox.Background;
         %tmp.15 = getv function %tmp.14 :exit;
         %tmp.17 = lgetv %ts.2;
         invoke %tmp.14 %tmp.15(%tmp.17);
-D_Git_Hearts_Desire_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_stop:
+C_Git_HeartsDesire_source_HeartsDesireBackhround_mc_18_31_27_4_stop:
     }
 }
-[ @file = "D:\Git\Hearts Desire\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 1; ]
+[ @file = "C:\Git\HeartsDesire\source\HeartsDesireBackhround.mc"; @line = 1; ]
 <init> {
 }
